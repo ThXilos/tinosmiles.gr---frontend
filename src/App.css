@@ -1,38 +1,33 @@
-.App {
-  text-align: center;
+/* Website color pallete: 
+Primary Color:#6ac1b7;
+Secondary Color:#
+Secondary light color:#79c7be
+Secondary dark color:#0a9695;
+Warning color: #ffc107;
+Footer color:#1d242d
+Text Color: #666;
+CTA color: #FDA14F
+
+
+Font-sizing: 16 18 20 22 24 ....  42 44 46 48 50 52
+icons-size: 
+Font-family : "Roboto",sans-serif
+Weights : 300 400 500 700;
+line-height: 0px;
+letter-spacing:0px;
+
+*/
+
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  box-sizing: border-box;
 }
