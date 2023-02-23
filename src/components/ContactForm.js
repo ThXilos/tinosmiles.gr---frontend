@@ -28,7 +28,7 @@ const ContactForm = () => {
     e.preventDefault();
     setLoading(true);
     const response = await axios.post(
-      "http://localhost:5000/api/sendemail",
+      process.env.REACT_APP_MAIL_ROUTE,
       payload
     );
     response.data && setLoading(false);
