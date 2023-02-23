@@ -10,8 +10,7 @@ import {
 } from "../utils/icons";
 
 const Navigation = () => {
-  const { mobileMenuOpen, setMobileMenuOpen, toggleWarning, setToggleWarning } =
-    useGlobalContext();
+  const { toggleWarning, setToggleWarning } = useGlobalContext();
 
   return (
     <Wrapper>

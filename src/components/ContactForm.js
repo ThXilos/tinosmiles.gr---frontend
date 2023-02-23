@@ -3,7 +3,6 @@ import styled from "styled-components";
 import axios from "axios";
 
 const ContactForm = () => {
-  const [loading, setLoading] = useState(false);
   const [acceptAgreement, setAcceptAgreement] = useState(false);
   const [payload, setPayload] = useState({
     name: "",
@@ -26,12 +25,11 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+
     const response = await axios.post(
       process.env.REACT_APP_MAIL_ROUTE,
       payload
     );
-    response.data && setLoading(false);
   };
 
   return (
