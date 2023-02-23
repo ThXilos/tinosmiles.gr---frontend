@@ -93,9 +93,9 @@ const ContactForm = () => {
             <option value="" selected="" disabled="">
               Select Time
             </option>
-            <option value="1">10.00am</option>
-            <option value="2">14.00pm</option>
-            <option value="3">17.00pm</option>
+            <option value="10.00">10.00am</option>
+            <option value="14.00">14.00pm</option>
+            <option value="17.00">17.00pm</option>
           </select>
           <p className="field-tertiaty">return time</p>
           <select
@@ -108,9 +108,9 @@ const ContactForm = () => {
             <option value="" selected="" disabled="">
               Select Time
             </option>
-            <option value="1">10.00am</option>
-            <option value="2">14.00pm</option>
-            <option value="3">17.00pm</option>
+            <option value="10.00">10.00am</option>
+            <option value="14.00">14.00pm</option>
+            <option value="17.00">17.00pm</option>
           </select>
         </div>
         <div className="field-container">
@@ -126,9 +126,9 @@ const ContactForm = () => {
             <option value="" selected="" disabled="">
               Location
             </option>
-            <option value="1">Harbor</option>
-            <option value="2">Hotel</option>
-            <option value="3">Other</option>
+            <option value="Harbor">Harbor</option>
+            <option value="Hotel">Hotel</option>
+            <option value="other">Other</option>
           </select>
           <button className="submit-btn" disabled={!acceptAgreement}>
             send inquiry
