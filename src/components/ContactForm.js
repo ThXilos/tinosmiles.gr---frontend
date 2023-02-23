@@ -30,6 +30,7 @@ const ContactForm = () => {
       process.env.REACT_APP_MAIL_ROUTE,
       payload
     );
+    console.log(response.message);
   };
 
   return (
