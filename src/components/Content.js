@@ -63,8 +63,34 @@ const Content = () => {
         </div>
         <div className="col col-3 shadow">
           <div className="col__cta">book now</div>
+          <div className="image-container">
+            <img
+              src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677243757/tinosmiles.gr/tinos-miles-fiat-panda-image_niq7ai.png"
+              alt="a white Fiat Panda with no background"
+              className="car-image"
+            />
+          </div>
+          <div className="info-container">
+            <div className="title-container">
+              <p className="tertiary">New Fiat Panda</p>
+              <p className="tertiary --strong">Economy</p>
+            </div>
+            <div className="car-info-container">
+              <p className="info-item">5 Person</p>
+              <p className="info-item">Manual Drive</p>
+              <p className="info-item">2 Luggage</p>
+              <p className="info-item">1.2 Cc</p>
+            </div>
+          </div>
         </div>
-        <div className="col col-4 shadow"></div>
+        <div className="col col-4">
+          <div className="container --cta-box bg1">
+            <p className="tertiary --bg-text">Explore the island.</p>
+          </div>
+          <div className="container --cta-box bg2">
+            <p className="tertiary --bg-text">Explore the island.</p>
+          </div>
+        </div>
       </div>
     </Wrapper>
   );
@@ -91,7 +117,6 @@ const Wrapper = styled.section`
 
   .col-1{}
   .col-2, .col-3{
-    background-color:#79c7be;
     border-radius:9px;
     overflow:hidden;
     box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
@@ -100,6 +125,40 @@ const Wrapper = styled.section`
 
   }  
 
+  .--cta-box{
+    height:48%;
+    background-size:cover;
+    background-position:center;
+    justify-content: center;
+  }
+
+  .bg1{
+    background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1677243757/tinosmiles.gr/tinos-miles-front-door_w1jhqh.jpg);
+  }
+
+  .bg2{
+    background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1677243757/tinosmiles.gr/tinos-miles-explore-image_npxdwy.jpg);
+  }
+
+  .--bg-text{
+    background:rgba(106,193,183, 0.7);
+    padding:0 1rem;
+  }
+
+  .col-2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)),url(https://res.cloudinary.com/dtekdjcan/image/upload/v1677243658/tinosmiles.gr/tinos-miles-about-card-image_tf6sfg.jpg);
+    background-size:cover;
+    background-position: right;
+  }
+
+  .col-3{
+    color:#555;
+
+  }
+
+  .car-image{
+    width:100%;
+}
   .container {
     display: flex;
     flex-direction: column;
@@ -114,6 +173,30 @@ const Wrapper = styled.section`
     font-weight: 700;
     letter-spacing: 1.2px;
     text-transform: capitalize;
+  }
+
+  .info-container{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    padding:2rem;
+  }
+
+  .car-info-container{
+    padding:1rem;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    row-gap:1rem;
+    column-gap:0.5rem;
+  }
+
+  .info-item{
+    background-color:#6ac1b7;
+    color:#fff;
+    padding:1rem;
+    font-size:1.2rem;
+    border-radius:9px;
+    text-align:center;
   }
 
   .contact-info {

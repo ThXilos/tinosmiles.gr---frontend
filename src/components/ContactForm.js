@@ -2,9 +2,10 @@ import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
+import { useGlobalContext } from "../context/AppContext";
+
 const ContactForm = () => {
-  const [acceptAgreement, setAcceptAgreement] = useState(false);
-  const [payload, setPayload] = useState({
+  const initState = {
     name: "",
     email: "",
     pickupDate: "",
@@ -12,7 +13,13 @@ const ContactForm = () => {
     pickupTime: "",
     returnTime: "",
     pickupLocation: "",
-  });
+  };
+
+  const { loading, setLoading, setMessageSuccess } = useGlobalContext();
+
+  const [acceptAgreement, setAcceptAgreement] = useState(false);
+
+  const [payload, setPayload] = useState(initState);
 
   const handleClick = () => {
     setAcceptAgreement(!acceptAgreement);
@@ -25,12 +32,24 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await axios.post(process.env.REACT_APP_MAIL_ROUTE, payload);
+      setMessageSuccess(true);
+      setLoading(false);
+      setPayload(initState);
+      setTimeout(() => {
+        setMessageSuccess(false);
+      }, 3000);
 
-    const response = await axios.post(
-      process.env.REACT_APP_MAIL_ROUTE,
-      payload
-    );
-    console.log(response.message);
+      console.log(res.data.message);
+    } catch (err) {
+      console.log(err.message);
+      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
+    }
   };
 
   return (
@@ -131,7 +150,7 @@ const ContactForm = () => {
             <option value="other">Other</option>
           </select>
           <button className="submit-btn" disabled={!acceptAgreement}>
-            send inquiry
+            {loading ? "spinner" : "send inquiry"}
           </button>
         </div>
       </form>
@@ -154,7 +173,7 @@ const ContactForm = () => {
 
 const Wrapper = styled.section`
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 2rem 1rem;
+  padding: 3rem 4rem;
   border-radius: 9px;
 
   .contact-form-container {

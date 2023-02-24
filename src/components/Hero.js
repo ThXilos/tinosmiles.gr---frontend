@@ -2,7 +2,10 @@ import styled from "styled-components";
 import ContactForm from "./ContactForm";
 import { ArrowDown } from "../utils/icons";
 
+import { useGlobalContext } from "../context/AppContext";
+
 const Hero = () => {
+  const { messageSuccess } = useGlobalContext();
   return (
     <Wrapper>
       <div className="hero-text-container">
@@ -12,6 +15,9 @@ const Hero = () => {
         </p>
       </div>
       <div className="contact-form-container">
+        <div className={`module ${messageSuccess ? "" : "hide"}`}>
+          <p>We got your message, we will get right back to you.</p>
+        </div>
         <ContactForm />
       </div>
       <div className="btn-container">
@@ -34,6 +40,10 @@ const Wrapper = styled.section`
   justify-content: space-around;
   align-items: center;
 
+  .hide {
+    display: none;
+  }
+
   .hero-text-container {
     color: #fff;
     display: flex;
@@ -48,6 +58,24 @@ const Wrapper = styled.section`
   .secondary-title {
     font-size: 3rem;
     font-weight: 500;
+  }
+
+  .contact-form-container {
+    position: relative;
+  }
+
+  .module {
+    border-radius: 9px;
+    color: #fff;
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    background-color: #4bb543;
+    text-align: center;
+    position: absolute;
+    top: -17%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
   }
 
   .btn__cta {

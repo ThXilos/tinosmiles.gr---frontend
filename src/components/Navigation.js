@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { useGlobalContext } from "../context/AppContext";
 import {
   FiInstagram,
   FiFacebook,
   FiXSquare,
   FiAlertCircle,
 } from "../utils/icons";
+
+import { useGlobalContext } from "../context/AppContext";
 
 const Navigation = () => {
   const { toggleWarning, setToggleWarning } = useGlobalContext();
@@ -74,7 +75,9 @@ const Navigation = () => {
       >
         <div className="warning-ribon__message">
           <FiAlertCircle />
-          <p>Tinos Miles Car Rental Response to Covid-19</p>
+          <NavLink to="#" className="warning-ribon__message__text">
+            Tinos Miles Car Rental Response to Covid-19
+          </NavLink>
         </div>
         <FiXSquare
           className="warning-ribon__close_btn"
@@ -157,10 +160,14 @@ const Wrapper = styled.section`
   }
 
   .warning-ribon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 1rem;
     color: #555;
     background-color: #ffc107;
     transition: all 0.3s;
@@ -173,6 +180,10 @@ const Wrapper = styled.section`
     align-items: center;
     gap: 0.5rem;
     font-weight: 500;
+  }
+
+  .warning-ribon__message__text {
+    text-decoration: none;
     color: #555;
   }
 

@@ -3,4 +3,5 @@
 import Navigation from "./Navigation";
 import Hero from "./Hero";
 import Content from "./Content";
-export { Navigation, Hero, Content };
+import Location from "./Location";
+export { Navigation, Hero, Content, Location };

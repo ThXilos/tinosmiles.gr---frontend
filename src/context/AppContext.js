@@ -6,6 +6,8 @@ export const AppProvider = ({ children }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [toggleLanguage, setToggleLanguage] = useState(true);
   const [toggleWarning, setToggleWarning] = useState(true);
+  const [messageSuccess, setMessageSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
   return (
     <AppContext.Provider
       value={{
@@ -15,6 +17,10 @@ export const AppProvider = ({ children }) => {
         setToggleLanguage,
         toggleWarning,
         setToggleWarning,
+        messageSuccess,
+        setMessageSuccess,
+        loading,
+        setLoading,
       }}
     >
       {children}
