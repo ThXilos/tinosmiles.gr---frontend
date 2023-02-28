@@ -5,4 +5,5 @@ import Hero from "./Hero";
 import Content from "./Content";
 import Location from "./Location";
 import Footer from "./Footer";
-export { Navigation, Hero, Content, Location, Footer };
+import Cookie from "./Cookie";
+export { Navigation, Hero, Content, Location, Footer, Cookie };

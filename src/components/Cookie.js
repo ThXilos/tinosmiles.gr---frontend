@@ -1,0 +1,74 @@
+import React, { useState } from "react";
+import styled from "styled-components";
+
+const Cookie = () => {
+  const checkCookieStatus = () => {
+    return document.cookie.slice(document.cookie.indexOf("=") + 1) === "true";
+  };
+
+  const [acceptCookie, setAcceptCookie] = useState(checkCookieStatus());
+
+  const handleClick = () => {
+    setAcceptCookie(true);
+    document.cookie =
+      "acceptedCookies=true; expires=Thu, 31 Dec 2099 23:59:59 GMT; path=/; SameSite=None; Secure";
+  };
+
+  return acceptCookie ? (
+    ""
+  ) : (
+    <Wrapper>
+      <h2 className="--title">We use cookies 🍪</h2>
+      <p className="--text">
+        Our websites use cookies (also from third parties) for functional and
+        analytical purposes, and to show you personalised advertisement. You can
+        adjust this in Cookie Settings or learn more by reading our cookie
+        policy.
+      </p>
+      <button className="btn-cookie" onClick={handleClick}>
+        accept
+      </button>
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  width: 350px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 9px;
+  margin: 1rem;
+  box-shadow: 0px 0px 10px;
+
+  .--title {
+    font-size: 2.2rem;
+  }
+
+  .--text {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    line-height: 1.8;
+  }
+
+  .btn-cookie {
+    width: 30%;
+    padding: 1rem 2rem;
+    background-color: #6ac1b7;
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .btn-cookie:hover {
+    cursor: pointer;
+  }
+`;
+
+export default Cookie;

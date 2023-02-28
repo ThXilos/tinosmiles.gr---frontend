@@ -1,2 +1,3 @@
 import Main from "./Main";
-export { Main };
+import SafetyInfo from "./SafetyInfo";
+export { Main, SafetyInfo };

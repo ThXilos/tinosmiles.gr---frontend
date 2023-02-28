@@ -75,7 +75,7 @@ const Navigation = () => {
       >
         <div className="warning-ribon__message">
           <FiAlertCircle />
-          <NavLink to="#" className="warning-ribon__message__text">
+          <NavLink to="/safety" className="warning-ribon__message__text">
             Tinos Miles Car Rental Response to Covid-19
           </NavLink>
         </div>

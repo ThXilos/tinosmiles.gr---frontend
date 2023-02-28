@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { FiInstagram, FiFacebook } from "../utils/icons";
+import Cookie from "./Cookie";
+
 const Footer = () => {
   return (
     <Wrapper>
+      <Cookie />
       <div className="container --col">
         <div className="col-1">
           <p className="--col-title">quick payment option</p>
@@ -33,8 +36,20 @@ const Footer = () => {
       <div className="container --cp">
         <p className="cp-text">&#169; 2019-2023 tinos miles</p>
         <div className="container --sis">
-          <FiInstagram className="--si" />
-          <FiFacebook className="--si" />
+          <a
+            href="https://www.instagram.com/tinosmiles/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FiInstagram className="--si" />
+          </a>
+          <a
+            href="https://www.facebook.com/tinossmiles/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FiFacebook className="--si" />
+          </a>
         </div>
       </div>
     </Wrapper>
@@ -43,6 +58,7 @@ const Footer = () => {
 
 const Wrapper = styled.section`
   background-color: #0a9695;
+
   .container {
     display: flex;
     flex-direction: column;
@@ -97,6 +113,14 @@ const Wrapper = styled.section`
 
   .--si {
     font-size: 2.4rem;
+    opacity: 0.8;
+    transition: all 0.3s;
+    color: #fff;
+  }
+
+  .--si:hover {
+    cursor: pointer;
+    opacity: 1;
   }
 `;
 

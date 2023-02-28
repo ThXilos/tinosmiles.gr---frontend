@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Navigation, Footer } from "./components";
-import { Main } from "./pages";
+import { Main, SafetyInfo } from "./pages";
 function App() {
   return (
     <div>
@@ -15,6 +15,7 @@ function App() {
           element={<h1>Guide to the island</h1>}
         />
         <Route exact path="/quick-pickup" element={<h1>Quick-Pickup</h1>} />
+        <Route exact path="/safety" element={<SafetyInfo />} />
         <Route path="*" element={<h1>404</h1>} />
       </Routes>
       <Footer />
