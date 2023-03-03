@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FiInstagram, FiFacebook } from "../utils/icons";
 import Cookie from "./Cookie";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -27,7 +28,11 @@ const Footer = () => {
         <div className="col-3">
           <p className="--col-title">terms and privacy</p>
           <ul className="--ul">
-            <li>Privacy Policy</li>
+            <li>
+              <NavLink className="--link-item" to="/privacy-policy">
+                Privacy Policy
+              </NavLink>
+            </li>
             <li>Terms & Conditions</li>
             <li>Special Purpose Compensation 2019-2020</li>
           </ul>
@@ -94,6 +99,11 @@ const Wrapper = styled.section`
     margin-top: 1rem;
     border-radius: 9px;
     width: 80%;
+  }
+
+  .--link-item {
+    text-decoration: none;
+    color: #fff;
   }
 
   .--cp {

@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { format } from "date-fns";
 import styled from "styled-components";
 import axios from "axios";
-
 import { useGlobalContext } from "../context/AppContext";
 
 const ContactForm = () => {
@@ -86,6 +86,8 @@ const ContactForm = () => {
             id="pickupDate"
             type="date"
             name="pickupDate"
+            max={payload.returnDate && payload.returnDate}
+            min={format(new Date(), `yyyy-MM-dd`)}
             value={payload.pickupDate}
             onChange={handleChange}
           />
@@ -95,6 +97,11 @@ const ContactForm = () => {
             id="returnDate"
             type="date"
             name="returnDate"
+            min={
+              payload.pickupDate
+                ? payload.pickupDate
+                : format(new Date(), `yyy-MM-dd`)
+            }
             value={payload.returnDate}
             onChange={handleChange}
           />
@@ -109,12 +116,13 @@ const ContactForm = () => {
             value={payload.pickupTime}
             onChange={handleChange}
           >
-            <option value="" selected="" disabled="">
+            <option value="" disabled hidden>
               Select Time
             </option>
             <option value="10.00">10.00am</option>
             <option value="14.00">14.00pm</option>
             <option value="17.00">17.00pm</option>
+            <option value="Other">Other</option>
           </select>
           <p className="field-tertiaty">return time</p>
           <select
@@ -124,12 +132,13 @@ const ContactForm = () => {
             value={payload.returnTime}
             onChange={handleChange}
           >
-            <option value="" selected="" disabled="">
+            <option value="" disabled hidden>
               Select Time
             </option>
             <option value="10.00">10.00am</option>
             <option value="14.00">14.00pm</option>
             <option value="17.00">17.00pm</option>
+            <option value="Other">Other</option>
           </select>
         </div>
         <div className="field-container">
@@ -142,14 +151,17 @@ const ContactForm = () => {
             value={payload.pickupLocation}
             onChange={handleChange}
           >
-            <option value="" selected="" disabled="">
+            <option value="" disabled hidden>
               Location
             </option>
             <option value="Harbor">Harbor</option>
             <option value="Hotel">Hotel</option>
             <option value="other">Other</option>
           </select>
-          <button className="submit-btn" disabled={!acceptAgreement}>
+          <button
+            className={`btn ${acceptAgreement ? "--active" : "--disabled"}`}
+            disabled={!acceptAgreement}
+          >
             {loading ? "spinner" : "send inquiry"}
           </button>
         </div>
@@ -233,9 +245,8 @@ const Wrapper = styled.section`
     border: none;
   }
 
-  .submit-btn {
+  .btn {
     margin-top: 2rem;
-    background-color: #6ac1b7;
     color: #fff;
     font-size: 1.6rem;
     text-transform: uppercase;
@@ -245,7 +256,15 @@ const Wrapper = styled.section`
     transition: all 0.3s;
   }
 
-  .submit-btn:hover {
+  .--disabled {
+    background-color: #555;
+  }
+
+  .--active {
+    background-color: #6ac1b7;
+  }
+
+  .--active:hover {
     cursor: pointer;
     background-color: #79c7be;
   }
