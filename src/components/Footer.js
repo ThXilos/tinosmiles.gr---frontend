@@ -33,7 +33,11 @@ const Footer = () => {
                 Privacy Policy
               </NavLink>
             </li>
-            <li>Terms & Conditions</li>
+            <li>
+              <NavLink className="--link-item" to="/terms-conditions">
+                Terms & Conditions
+              </NavLink>
+            </li>
             <li>Special Purpose Compensation 2019-2020</li>
           </ul>
         </div>

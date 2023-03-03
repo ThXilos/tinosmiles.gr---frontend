@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Navigation, Footer } from "./components";
-import { Main, SafetyInfo, About, NotFound, Privacy } from "./pages";
+import { Main, SafetyInfo, About, NotFound, Privacy, Terms } from "./pages";
 function App() {
   return (
     <div>
@@ -18,6 +18,7 @@ function App() {
         <Route exact path="/safety" element={<SafetyInfo />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/privacy-policy" element={<Privacy />} />
+        <Route path="/terms-conditions" element={<Terms />} />
       </Routes>
       <Footer />
     </div>

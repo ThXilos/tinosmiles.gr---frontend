@@ -2,6 +2,7 @@ import { useState } from "react";
 import { format } from "date-fns";
 import styled from "styled-components";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../context/AppContext";
 
 const ContactForm = () => {
@@ -176,7 +177,11 @@ const ContactForm = () => {
           }}
         ></div>
         <p className="terms-accept-text">
-          I agree to the Privacy Policy terms.
+          I agree to the{" "}
+          <NavLink className="--link" to="/privacy-policy">
+            Privacy Policy
+          </NavLink>{" "}
+          terms.
         </p>
       </div>
     </Wrapper>
@@ -296,6 +301,17 @@ const Wrapper = styled.section`
     width: 10px;
     height: 10px;
     cursor: pointer;
+  }
+
+  .--link {
+    text-decoration: none;
+    color: #0a9695;
+    transition: all 0.3s;
+  }
+
+  .--link:hover {
+    text-decoration: none;
+    color: #fda14f;
   }
 `;
 

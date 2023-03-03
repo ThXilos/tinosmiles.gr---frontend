@@ -3,4 +3,5 @@ import SafetyInfo from "./SafetyInfo";
 import About from "./About";
 import NotFound from "./NotFound";
 import Privacy from "./Privacy";
-export { Privacy, Main, SafetyInfo, About, NotFound };
+import Terms from "./Terms";
+export { Privacy, Main, SafetyInfo, About, NotFound, Terms };
