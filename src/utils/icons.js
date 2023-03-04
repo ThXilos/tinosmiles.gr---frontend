@@ -25,7 +25,12 @@ import {
   FaCcAmex,
 } from "react-icons/fa";
 
+import { GrMail } from "react-icons/gr";
+import { IoCall } from "react-icons/io5";
+
 export {
+  IoCall,
+  GrMail,
   FiInstagram,
   FiFacebook,
   FiXSquare,

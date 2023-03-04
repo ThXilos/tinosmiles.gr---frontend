@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ContactForm from "./ContactForm";
-import { ArrowDown } from "../utils/icons";
+import { ArrowDown, IoCall, GrMail } from "../utils/icons";
 
 import { useGlobalContext } from "../context/AppContext";
 
@@ -26,15 +26,15 @@ const Hero = () => {
           <span>see more</span>
         </button>
         <button className="--btn --call">
-          <ArrowDown className="btn__cta__icon" />
+          <IoCall className="btn__cta__icon" />
           <div className="text-container">
-            <span>+30 693-7696-704</span>
+            <span className="--btn-text">Call Us</span>
           </div>
         </button>
         <button className="--btn --inqu">
-          <ArrowDown className="btn__cta__icon" />
+          <GrMail className="btn__cta__icon" />
           <div className="text-container">
-            <span>Make an Inquiry</span>
+            <span className="--btn-text">Make an Inquiry</span>
           </div>
         </button>
       </div>
@@ -116,6 +116,15 @@ const Wrapper = styled.section`
 
   .btn__cta__icon {
     font-size: 3rem;
+    border-right: 1px solid #fff;
+    height: 100%;
+    padding-right: 2rem;
+  }
+
+  .--btn-text {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
   }
 
   @media (max-width: 768px) {
@@ -164,7 +173,8 @@ const Wrapper = styled.section`
     .text-container {
       flex-grow: 1;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      padding-left: 3rem;
       align-items: center;
     }
 
