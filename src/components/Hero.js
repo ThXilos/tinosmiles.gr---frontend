@@ -43,7 +43,7 @@ const Hero = () => {
 };
 
 const Wrapper = styled.section`
-  background-image: url("img/tinosmiles-hero.jpg");
+  background-image: url("https://res.cloudinary.com/dtekdjcan/image/upload/v1677927745/tinosmiles.gr/hero-img-tinos-miles-rent-a-car_vaenws_w1ozza.webp");
   background-size: cover;
   background-position: center;
   height: 80vh;
