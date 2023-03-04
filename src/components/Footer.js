@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { FiInstagram, FiFacebook } from "../utils/icons";
+import {
+  FiInstagram,
+  FiFacebook,
+  BsTelephone,
+  HiOutlineMail,
+} from "../utils/icons";
 import Cookie from "./Cookie";
 import { NavLink } from "react-router-dom";
 
@@ -20,8 +25,14 @@ const Footer = () => {
         <div className="col-2">
           <p className="--col-title">office hours 9:00 am - 9:00 pm</p>
           <ul className="--ul">
-            <li>+30 6944187668</li>
-            <li>contact@tinosmiles.gr</li>
+            <li className="--list-item">
+              <BsTelephone />
+              +30 6944187668
+            </li>
+            <li className="--list-item">
+              <HiOutlineMail />
+              contact@tinosmiles.gr
+            </li>
             <li>GNTO Reg. No:1178E81000946601</li>
           </ul>
         </div>
@@ -43,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="container --cp">
-        <p className="cp-text">&#169; 2019-2023 tinos miles</p>
+        <p className="cp-text">Created by tinos miles &#169; 2019-2023</p>
         <div className="container --sis">
           <a
             href="https://www.instagram.com/tinosmiles/"
@@ -135,6 +146,27 @@ const Wrapper = styled.section`
   .--si:hover {
     cursor: pointer;
     opacity: 1;
+  }
+
+  .--list-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .--col {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3rem;
+      padding: 2rem 4rem 3rem;
+    }
+
+    .--cp {
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0 0 0;
+    }
   }
 `;
 

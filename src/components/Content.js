@@ -261,6 +261,39 @@ const Wrapper = styled.section`
     gap: 2rem;
     padding: 1rem 1rem;
   }
+
+  @media (max-width: 768px) {
+    .col-container{
+      flex-direction:column;
+      gap:2rem;
+      padding:2rem 1rem;
+    }
+    
+    .contact-info{
+      display:none;
+    }
+
+    .col {
+      width:auto;
+    }
+
+    .col-1{
+      height:auto;
+      order:2;
+    }
+
+    .col-2{
+      order:1;
+    }
+
+    .col-3{
+      order:3;
+    }
+
+    .col-4{
+      order:4;
+    }
+  }
 `;
 
 export default Content;

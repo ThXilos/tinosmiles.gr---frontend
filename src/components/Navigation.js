@@ -49,6 +49,7 @@ const Navigation = () => {
           </NavLink>
         </div>
         <nav className="navigation-ribon__navigation-container">
+          <div className="mobile-menu-btn">OPEN</div>
           <ul className="menu-list">
             <li>
               <NavLink to="/about" className="menu-list__item">
@@ -96,6 +97,10 @@ const Wrapper = styled.section`
   color: #fff;
   font-size: 1.6rem;
   position: relative;
+
+  .mobile-menu-btn {
+    display: none;
+  }
 
   .info-ribon {
     display: flex;
@@ -195,6 +200,38 @@ const Wrapper = styled.section`
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .info-ribon {
+      flex-direction: column;
+      padding: 1rem 0;
+      gap: 1rem;
+    }
+
+    .info-ribon__contact__text {
+      font-size: 1.4rem;
+    }
+
+    .navigation-ribon {
+      display: flex;
+      background-color: #6ac1b7;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1rem;
+    }
+
+    .logo {
+      max-width: 20rem;
+    }
+
+    .mobile-menu-btn {
+      display: block;
+    }
+
+    .menu-list {
+      display: none;
+    }
   }
 `;
 

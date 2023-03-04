@@ -25,6 +25,18 @@ const Hero = () => {
           <ArrowDown className="btn__cta__icon" />
           <span>see more</span>
         </button>
+        <button className="--btn --call">
+          <ArrowDown className="btn__cta__icon" />
+          <div className="text-container">
+            <span>+30 693-7696-704</span>
+          </div>
+        </button>
+        <button className="--btn --inqu">
+          <ArrowDown className="btn__cta__icon" />
+          <div className="text-container">
+            <span>Make an Inquiry</span>
+          </div>
+        </button>
       </div>
     </Wrapper>
   );
@@ -41,6 +53,10 @@ const Wrapper = styled.section`
   align-items: center;
 
   .hide {
+    display: none;
+  }
+
+  .--btn {
     display: none;
   }
 
@@ -100,6 +116,75 @@ const Wrapper = styled.section`
 
   .btn__cta__icon {
     font-size: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    height: 70vh;
+    justify-content: space-between;
+    padding: 2rem 0 2rem;
+
+    .hero-text-container {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .contact-form-container {
+      display: none;
+    }
+
+    .btn__cta {
+      display: none;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .--btn {
+      display: flex;
+      justify-content: flex-start;
+      gap: 3rem;
+      align-items: center;
+      width: 40rem;
+      font-size: 2rem;
+      height: 5rem;
+      border-style: none;
+      color: #fff;
+      padding: 0 2rem;
+
+      border-radius: 3px;
+    }
+
+    .--btn:hover {
+      cursor: pointer;
+    }
+
+    .text-container {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .--inqu {
+      background-color: #0a9695;
+      transition: all 0.3s;
+    }
+
+    .--call {
+      background-color: #e67e22;
+      transition: all 0.3s;
+    }
+
+    .--call:hover {
+      background-color: #fda14f;
+    }
+
+    .--inqu:hover {
+      background-color: #79c7be;
+    }
   }
 `;
 

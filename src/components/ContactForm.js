@@ -283,14 +283,14 @@ const Wrapper = styled.section`
   }
   .terms-accept-text {
     font-size: 1.6rem;
-    color: #0a9695;
+    color: #777;
     font-weight: 500;
   }
 
   .check-box {
     width: 10px;
     height: 10px;
-    border: 3px solid #79c7be;
+    border: 3px solid #777;
   }
 
   .check-box__filled {
@@ -311,7 +311,7 @@ const Wrapper = styled.section`
 
   .--link:hover {
     text-decoration: none;
-    color: #fda14f;
+    color: #6ac1b7;
   }
 `;
 
