@@ -10,8 +10,12 @@ const Terms = () => {
   return (
     <Wrapper>
       <div className="container">
-        <div className="--title-container">
-          <p className="--primary">Tinos Miles services Terms & Conditions</p>
+        <div className="--section --first">
+          <h1 className="--primary">Tinos Miles services Terms & Conditions</h1>
+          <p className="--subtitle">
+            Please make sure you read and understand the following terms and
+            conditions, regarding the car rental proccess.
+          </p>
         </div>
         <p className="--subtitle">
           The car which is delivered to the renter is in good overall condition,
@@ -124,6 +128,14 @@ const Wrapper = styled.div`
     padding: 1rem 0 2rem 0;
   }
 
+  .--first {
+    background-color: #ffc107;
+    border-radius: 9px;
+    padding: 1rem;
+    color: #555;
+    margin-top: 1rem;
+  }
+
   .--title-container {
   }
 
@@ -132,8 +144,8 @@ const Wrapper = styled.div`
   }
 
   .--primary {
-    margin-top: 2rem;
-    font-size: 1.6rem;
+    padding: 1rem 0;
+    font-size: 2.6rem;
     font-weight: 600;
   }
 
@@ -147,7 +159,7 @@ const Wrapper = styled.div`
   @media (max-width: 600px) {
     .container {
       flex-direction: column;
-      padding: 0 1rem;
+      padding: 0 1rem 2rem;
     }
   }
 `;

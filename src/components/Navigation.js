@@ -67,12 +67,20 @@ const Navigation = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/tinos-island-guide" className="menu-list__item">
+              <NavLink
+                to="/tinos-island-guide"
+                className="menu-list__item"
+                onClick={() => setToggleMobileMenu(false)}
+              >
                 island guide
               </NavLink>
             </li>
             <li>
-              <NavLink to="/quick-pickup" className="menu-list__item">
+              <NavLink
+                to="/quick-pickup"
+                className="menu-list__item"
+                onClick={() => setToggleMobileMenu(false)}
+              >
                 quick-pickup
               </NavLink>
             </li>
@@ -253,7 +261,7 @@ const Wrapper = styled.section`
       width: 100%;
       height: 0px;
       overflow: hidden;
-      transition: height 0.3s ease-in-out;
+      transition: height 0.3s ease-in;
       font-size: 3rem;
     }
 

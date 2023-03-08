@@ -4,6 +4,7 @@ import { useGlobalContext } from "../context/AppContext";
 
 const SafetyInfo = () => {
   const { setToggleWarning } = useGlobalContext();
+
   useEffect(() => {
     setToggleWarning();
   }, [setToggleWarning]);
@@ -97,6 +98,12 @@ const Wrapper = styled.div`
   .--text {
     font-size: 2rem;
     letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
   }
 `;
 
