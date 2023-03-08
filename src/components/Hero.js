@@ -5,7 +5,7 @@ import { ArrowDown, IoCall, GrMail } from "../utils/icons";
 import { useGlobalContext } from "../context/AppContext";
 
 const Hero = () => {
-  const { messageSuccess } = useGlobalContext();
+  const { messageSuccess, messageWarning } = useGlobalContext();
   return (
     <Wrapper>
       <div className="hero-text-container">
@@ -15,8 +15,17 @@ const Hero = () => {
         </p>
       </div>
       <div className="contact-form-container">
-        <div className={`module ${messageSuccess ? "" : "hide"}`}>
+        <div
+          className={`module ${messageSuccess ? "" : "hide"}`}
+          style={{ backgroundColor: "#d4edda", color: "#155724" }}
+        >
           <p>We got your message, we will get right back to you.</p>
+        </div>
+        <div
+          className={`module ${messageWarning ? "" : "hide"}`}
+          style={{ backgroundColor: "#fff3cd", color: "#856404" }}
+        >
+          <p>woops, is your email correct?</p>
         </div>
         <ContactForm />
       </div>
@@ -82,10 +91,8 @@ const Wrapper = styled.section`
 
   .module {
     border-radius: 9px;
-    color: #fff;
     font-size: 1.6rem;
     padding: 1rem 2rem;
-    background-color: #4bb543;
     text-align: center;
     position: absolute;
     top: -17%;
@@ -156,7 +163,7 @@ const Wrapper = styled.section`
       justify-content: flex-start;
       gap: 3rem;
       align-items: center;
-      width: 40rem;
+      width: 35rem;
       font-size: 2rem;
       height: 5rem;
       border-style: none;

@@ -52,10 +52,13 @@ const Wrapper = styled.div`
     max-width: 500px;
     line-height: 1.8;
     letter-spacing: 1.2px;
-    text-align: center;
+    text-align: left;
   }
 
   @media (max-width: 600px) {
+    .container {
+      padding: 0 1rem;
+    }
   }
 `;
 

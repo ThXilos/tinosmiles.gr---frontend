@@ -85,7 +85,6 @@ const Wrapper = styled.section`
   .--card {
     height: 350px;
     width: 300px;
-    //     box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
   }
 
   .icon-container {
@@ -125,6 +124,16 @@ const Wrapper = styled.section`
     letter-spacing: 1.2px;
     line-height: 1.5;
     padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .card-container {
+      padding: 3rem 1rem;
+    }
+
+    .--card {
+      width: 100%;
+    }
   }
 `;
 

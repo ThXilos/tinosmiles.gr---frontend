@@ -16,11 +16,17 @@ const ContactForm = () => {
     pickupLocation: "",
   };
 
-  const { loading, setLoading, setMessageSuccess } = useGlobalContext();
+  const { loading, setLoading, setMessageSuccess, setMessageWarning } =
+    useGlobalContext();
 
   const [acceptAgreement, setAcceptAgreement] = useState(false);
 
   const [payload, setPayload] = useState(initState);
+
+  const checkEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  };
 
   const handleClick = () => {
     setAcceptAgreement(!acceptAgreement);
@@ -34,6 +40,15 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    if (!checkEmail(payload.email)) {
+      setLoading(false);
+      console.log("here");
+      setMessageWarning(true);
+      setTimeout(() => {
+        setMessageWarning(false);
+      }, 3000);
+      return;
+    }
     try {
       const res = await axios.post(process.env.REACT_APP_MAIL_ROUTE, payload);
       setMessageSuccess(true);
@@ -72,7 +87,6 @@ const ContactForm = () => {
           <input
             className="input-field"
             id="email"
-            type="email"
             name="email"
             value={payload.email}
             onChange={handleChange}

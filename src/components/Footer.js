@@ -26,11 +26,11 @@ const Footer = () => {
           <p className="--col-title">office hours 9:00 am - 9:00 pm</p>
           <ul className="--ul">
             <li className="--list-item">
-              <BsTelephone />
+              <BsTelephone className="--item-icon" />
               +30 6944187668
             </li>
             <li className="--list-item">
-              <HiOutlineMail />
+              <HiOutlineMail className="--item-icon" />
               contact@tinosmiles.gr
             </li>
             <li>GNTO Reg. No:1178E81000946601</li>
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="container --cp">
-        <p className="cp-text">Created by tinos miles &#169; 2019-2023</p>
+        <p className="cp-text">tinos miles &#169; 2019-2023</p>
         <div className="container --sis">
           <a
             href="https://www.instagram.com/tinosmiles/"
@@ -104,7 +104,7 @@ const Wrapper = styled.section`
   .--ul {
     text-transform: none;
     list-style: none;
-    padding: 2rem 0 0 1rem;
+    padding: 2rem 0 0 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -152,6 +152,10 @@ const Wrapper = styled.section`
     display: flex;
     align-items: center;
     gap: 2rem;
+  }
+
+  .--item-icon {
+    font-size: 2rem;
   }
 
   @media (max-width: 768px) {

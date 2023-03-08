@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import {
@@ -12,6 +12,10 @@ import { useGlobalContext } from "../context/AppContext";
 
 const Navigation = () => {
   const { toggleWarning, setToggleWarning } = useGlobalContext();
+  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+  const handleClick = () => {
+    setToggleMobileMenu(!toggleMobileMenu);
+  };
 
   return (
     <Wrapper>
@@ -49,10 +53,16 @@ const Navigation = () => {
           </NavLink>
         </div>
         <nav className="navigation-ribon__navigation-container">
-          <div className="mobile-menu-btn">OPEN</div>
-          <ul className="menu-list">
+          <div className="mobile-menu-btn" onClick={handleClick}>
+            OPEN
+          </div>
+          <ul className={`menu-list ${toggleMobileMenu ? "--open" : ""}`}>
             <li>
-              <NavLink to="/about" className="menu-list__item">
+              <NavLink
+                to="/about"
+                className="menu-list__item"
+                onClick={() => setToggleMobileMenu(false)}
+              >
                 about
               </NavLink>
             </li>
@@ -219,6 +229,8 @@ const Wrapper = styled.section`
       align-items: center;
       justify-content: space-between;
       padding: 1rem 1rem;
+
+      position: relative;
     }
 
     .logo {
@@ -230,7 +242,23 @@ const Wrapper = styled.section`
     }
 
     .menu-list {
-      display: none;
+      background-color: #0a9695;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 0px;
+      overflow: hidden;
+      transition: height 0.3s ease-in-out;
+      font-size: 3rem;
+    }
+
+    .--open {
+      height: 300px;
     }
   }
 `;
