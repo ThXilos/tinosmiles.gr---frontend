@@ -16,6 +16,8 @@ const ContactForm = () => {
     pickupLocation: "",
   };
 
+  const [honeypot, setHoneypot] = useState("");
+
   const { loading, setLoading, setMessageSuccess, setMessageWarning } =
     useGlobalContext();
 
@@ -37,12 +39,19 @@ const ContactForm = () => {
     setPayload((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleHoneypot = (e) => {
+    setHoneypot(e.traget.value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    if (honeypot) {
+      alert("Sorry, your submission could not be processed at this time.");
+      return;
+    }
     if (!checkEmail(payload.email)) {
       setLoading(false);
-      console.log("here");
       setMessageWarning(true);
       setTimeout(() => {
         setMessageWarning(false);
@@ -71,6 +80,12 @@ const ContactForm = () => {
   return (
     <Wrapper>
       <form onSubmit={handleSubmit} className="contact-form-container">
+        <input
+          type="hidden"
+          name="phone"
+          value={honeypot}
+          onChange={handleHoneypot}
+        />
         <div className="field-container">
           <p className="field-title">contact information:</p>
           <p className="field-tertiaty">please tell us your name</p>

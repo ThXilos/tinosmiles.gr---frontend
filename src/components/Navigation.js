@@ -6,6 +6,8 @@ import {
   FiFacebook,
   FiXSquare,
   FiAlertCircle,
+  RiMenuFoldFill,
+  RiMenuUnfoldFill,
 } from "../utils/icons";
 
 import { useGlobalContext } from "../context/AppContext";
@@ -44,7 +46,7 @@ const Navigation = () => {
       </div>
       <div className="navigation-ribon">
         <div className="navigation-ribon__logo-container">
-          <NavLink to="/">
+          <NavLink to="/" onClick={() => setToggleMobileMenu(false)}>
             <img
               className="logo"
               src="/img/tinosmiles_logo_site_400x100.png"
@@ -54,7 +56,11 @@ const Navigation = () => {
         </div>
         <nav className="navigation-ribon__navigation-container">
           <div className="mobile-menu-btn" onClick={handleClick}>
-            OPEN
+            {toggleMobileMenu ? (
+              <RiMenuUnfoldFill className="menu-icon" />
+            ) : (
+              <RiMenuFoldFill className="menu-icon" />
+            )}
           </div>
           <ul className={`menu-list ${toggleMobileMenu ? "--open" : ""}`}>
             <li>
@@ -167,6 +173,10 @@ const Wrapper = styled.section`
     list-style: none;
     font-size: 1.8rem;
     gap: 4rem;
+  }
+
+  .menu-icon {
+    font-size: 3rem;
   }
 
   .menu-list__item {

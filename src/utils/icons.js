@@ -7,16 +7,13 @@ import {
 } from "react-icons/fi";
 import { TbSunset } from "react-icons/tb";
 import { MdPhotoCamera } from "react-icons/md";
-
 import { BiDrink } from "react-icons/bi";
 import { GiKnifeFork } from "react-icons/gi";
-
 import {
   HiOutlineMail,
   HiOutlineLocationMarker,
   HiLocationMarker,
 } from "react-icons/hi";
-
 import {
   BsArrowDownShort as ArrowDown,
   BsTelephone,
@@ -31,10 +28,11 @@ import {
   FaCcAmex,
   FaCoffee,
 } from "react-icons/fa";
-
 import { GrMail } from "react-icons/gr";
 import { IoCall } from "react-icons/io5";
 import { MdMuseum } from "react-icons/md";
+
+import { RiMenuFoldFill, RiMenuUnfoldFill } from "react-icons/ri";
 
 export {
   MdMuseum,
@@ -62,4 +60,6 @@ export {
   GiKnifeFork,
   TbSunset,
   MdPhotoCamera,
+  RiMenuFoldFill,
+  RiMenuUnfoldFill,
 };

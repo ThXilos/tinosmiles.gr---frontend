@@ -65,7 +65,7 @@ const Content = () => {
           <div className="col__cta">book now</div>
           <div className="image-container">
             <img
-              src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677243757/tinosmiles.gr/tinos-miles-fiat-panda-image_niq7ai.png"
+              src="https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-fiat-panda-image_niq7ai_gfiifp.webp"
               alt="a white Fiat Panda with no background"
               className="car-image"
             />
@@ -133,11 +133,11 @@ const Wrapper = styled.section`
   }
 
   .bg1{
-    background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1677243757/tinosmiles.gr/tinos-miles-front-door_w1jhqh.jpg);
+    background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-front-door_wyfr0h.webp);
   }
 
   .bg2{
-    background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1677243757/tinosmiles.gr/tinos-miles-explore-image_npxdwy.jpg);
+    background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-explore-image_ukkkvn.webp);
   }
 
   .--bg-text{
@@ -146,7 +146,7 @@ const Wrapper = styled.section`
   }
 
   .col-2{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)),url(https://res.cloudinary.com/dtekdjcan/image/upload/v1677243658/tinosmiles.gr/tinos-miles-about-card-image_tf6sfg.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)),url(https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-about-image_wdx7zl.webp);
     background-size:cover;
     background-position: right;
   }

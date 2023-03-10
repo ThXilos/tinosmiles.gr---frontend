@@ -17,7 +17,11 @@ const Guide = () => {
       <div className="card-container">
         {vilages.map((vilage, index) => {
           return (
-            <div key={index} className="--card --flex-col">
+            <div
+              key={index}
+              className="--card --flex-col"
+              style={{ order: `${vilage.order}` }}
+            >
               <div
                 className="title-container --flex-row"
                 style={{
