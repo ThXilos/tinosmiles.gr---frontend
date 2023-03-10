@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useGlobalContext } from "../context/AppContext";
 import styled from "styled-components";
 import { vilages } from "../utils/vilages";
 import {
@@ -12,6 +13,10 @@ import {
 } from "../utils/icons";
 
 const Guide = () => {
+  const { setToggleWarning } = useGlobalContext();
+  useEffect(() => {
+    setToggleWarning();
+  }, [setToggleWarning]);
   return (
     <Wrapper>
       <div className="card-container">

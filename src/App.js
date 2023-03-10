@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Navigation, Footer } from "./components";
+import { Navigation, Footer, Responce } from "./components";
 import {
   Main,
   SafetyInfo,
@@ -23,6 +23,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/privacy-policy" element={<Privacy />} />
         <Route path="/terms-conditions" element={<Terms />} />
+        <Route path="/responce" element={<Responce />} />
       </Routes>
       <Footer />
     </div>
