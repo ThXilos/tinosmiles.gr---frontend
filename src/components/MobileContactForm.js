@@ -5,7 +5,7 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../context/AppContext";
 
-const ContactForm = () => {
+const MobileContactForm = () => {
   const initState = {
     name: "",
     email: "",
@@ -110,50 +110,62 @@ const ContactForm = () => {
         </div>
         <div className="field-container">
           <p className="field-title">select your dates:</p>
-          <p className="field-tertiaty">pick up date</p>
-          <input
-            className="input-field"
-            id="pickupDate"
-            type="date"
-            name="pickupDate"
-            max={payload.returnDate && payload.returnDate}
-            min={format(new Date(), `yyyy-MM-dd`)}
-            value={payload.pickupDate}
-            onChange={handleChange}
-          />
-          <p className="field-tertiaty">return date</p>
-          <input
-            className="input-field"
-            id="returnDate"
-            type="date"
-            name="returnDate"
-            min={
-              payload.pickupDate
-                ? payload.pickupDate
-                : format(new Date(), `yyy-MM-dd`)
-            }
-            value={payload.returnDate}
-            onChange={handleChange}
-          />
+          <div className="--row">
+            <div className="--col">
+              <p className="field-tertiaty">pick up date</p>
+              <input
+                className="input-field"
+                id="pickupDate"
+                type="date"
+                name="pickupDate"
+                max={payload.returnDate && payload.returnDate}
+                min={format(new Date(), `yyyy-MM-dd`)}
+                value={payload.pickupDate}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="--col">
+              <p className="field-tertiaty">return date</p>
+              <input
+                className="input-field"
+                id="returnDate"
+                type="date"
+                name="returnDate"
+                min={
+                  payload.pickupDate
+                    ? payload.pickupDate
+                    : format(new Date(), `yyy-MM-dd`)
+                }
+                value={payload.returnDate}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
         </div>
         <div className="field-container">
           <p className="field-title">choose time:</p>
-          <p className="field-tertiaty">pick up time</p>
-          <select
-            className="input-field select"
-            id="pickupTime"
-            name="pickupTime"
-            value={payload.pickupTime}
-            onChange={handleChange}
-          >
-            <option value="" disabled hidden>
-              Select Time
-            </option>
-            <option value="10.00">10.00am</option>
-            <option value="14.00">14.00pm</option>
-            <option value="17.00">17.00pm</option>
-            <option value="Other">Other</option>
-          </select>
+          <div className="--row">
+            <div className="--col">
+              <p className="field-tertiaty">pick up time</p>
+              <select
+                className="input-field select"
+                id="pickupTime"
+                name="pickupTime"
+                value={payload.pickupTime}
+                onChange={handleChange}
+              >
+                <option value="" disabled hidden>
+                  Select Time
+                </option>
+                <option value="10.00">10.00am</option>
+                <option value="14.00">14.00pm</option>
+                <option value="17.00">17.00pm</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div className="--col"></div>
+          </div>
+
           <p className="field-tertiaty">return time</p>
           <select
             className="input-field select"
@@ -219,17 +231,25 @@ const ContactForm = () => {
 
 const Wrapper = styled.section`
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 3rem 4rem;
+  padding: 2rem 1rem;
   border-radius: 9px;
   counter-reset: section;
 
+  .--row {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .contact-form-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
   }
 
   .field-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -266,7 +286,6 @@ const Wrapper = styled.section`
   }
 
   .input-field {
-    width: 25rem;
     color: #777;
     font-size: 1.6rem;
     padding: 0.5rem 1rem;
@@ -297,6 +316,8 @@ const Wrapper = styled.section`
   }
 
   .btn {
+    width: 20rem;
+    align-self: center;
     margin-top: 2rem;
     color: #fff;
     font-size: 1.6rem;
@@ -322,8 +343,8 @@ const Wrapper = styled.section`
 
   .terms-accept-container {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end;
     padding: 1rem 0 0;
     gap: 1rem;
   }
@@ -361,4 +382,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default ContactForm;
+export default MobileContactForm;

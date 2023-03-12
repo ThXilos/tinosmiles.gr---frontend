@@ -5,4 +5,14 @@ import NotFound from "./NotFound";
 import Privacy from "./Privacy";
 import Terms from "./Terms";
 import Guide from "./Guide";
-export { Privacy, Main, SafetyInfo, About, NotFound, Terms, Guide };
+import MobileContact from "./MobileContact";
+export {
+  Privacy,
+  Main,
+  SafetyInfo,
+  About,
+  NotFound,
+  Terms,
+  Guide,
+  MobileContact,
+};

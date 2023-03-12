@@ -9,6 +9,7 @@ import {
   Privacy,
   Terms,
   Guide,
+  MobileContact,
 } from "./pages";
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/privacy-policy" element={<Privacy />} />
         <Route path="/terms-conditions" element={<Terms />} />
         <Route path="/responce" element={<Responce />} />
+        <Route path="/contact" element={<MobileContact />} />
       </Routes>
       <Footer />
     </div>

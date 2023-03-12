@@ -7,4 +7,14 @@ import Location from "./Location";
 import Footer from "./Footer";
 import Cookie from "./Cookie";
 import Responce from "./Responce";
-export { Navigation, Hero, Content, Location, Footer, Cookie, Responce };
+import MobileContactForm from "./MobileContactForm";
+export {
+  Navigation,
+  Hero,
+  Content,
+  Location,
+  Footer,
+  Cookie,
+  Responce,
+  MobileContactForm,
+};
