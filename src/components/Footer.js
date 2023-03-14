@@ -98,7 +98,7 @@ const Wrapper = styled.section`
 
   .--col-title {
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .--ul {

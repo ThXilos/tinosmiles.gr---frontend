@@ -6,7 +6,8 @@ import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../context/AppContext";
 
 const Hero = () => {
-  const { messageSuccess, messageWarning } = useGlobalContext();
+  const { messageSuccess, messageWarning, setToggleMobileMenu } =
+    useGlobalContext();
   return (
     <Wrapper>
       <div className="hero-text-container">
@@ -41,7 +42,13 @@ const Hero = () => {
             <span className="--btn-text">Call Us</span>
           </div>
         </a>
-        <NavLink to="/contact" className="--btn --inqu">
+        <NavLink
+          to="/contact"
+          className="--btn --inqu"
+          onClick={() => {
+            setToggleMobileMenu(false);
+          }}
+        >
           <GrMail className="btn__cta__icon" />
           <div className="text-container">
             <span className="--btn-text">Make an Inquiry</span>

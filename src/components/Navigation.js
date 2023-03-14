@@ -13,8 +13,13 @@ import {
 import { useGlobalContext } from "../context/AppContext";
 
 const Navigation = () => {
-  const { toggleWarning, setToggleWarning } = useGlobalContext();
-  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+  const {
+    toggleWarning,
+    setToggleWarning,
+    setToggleMobileMenu,
+    toggleMobileMenu,
+  } = useGlobalContext();
+
   const handleClick = () => {
     setToggleMobileMenu(!toggleMobileMenu);
   };
@@ -273,6 +278,7 @@ const Wrapper = styled.section`
       overflow: hidden;
       transition: height 0.3s ease-in;
       font-size: 3rem;
+      z-index: 1;
     }
 
     .--open {
