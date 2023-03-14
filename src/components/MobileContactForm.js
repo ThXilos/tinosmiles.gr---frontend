@@ -79,42 +79,77 @@ const MobileContactForm = () => {
 
   return (
     <Wrapper>
-      <form onSubmit={handleSubmit} className="contact-form-container">
+      <form onSubmit={handleSubmit} class="container inner --center">
+        <div className="container --left --col" style={{ gap: "1rem" }}>
+          <h1 className="title">
+            Feel free
+            <br /> to make an inquiry
+          </h1>
+          <div className="divider"></div>
+        </div>
+
         <input
           type="hidden"
           name="phone"
           value={honeypot}
           onChange={handleHoneypot}
         />
-        <div className="field-container">
-          <p className="field-title">contact information:</p>
-          <p className="field-tertiaty">please tell us your name</p>
-          <input
-            className="input-field"
-            id="name"
-            type="text"
-            name="name"
-            value={payload.name}
-            onChange={handleChange}
-            placeholder="Your name"
-          />
-          <p className="field-tertiaty">enter a contact email</p>
-          <input
-            className="input-field"
-            id="email"
-            name="email"
-            value={payload.email}
-            onChange={handleChange}
-            placeholder="Your email address"
-          />
+        <div class="container --col">
+          <p class="head">name</p>
+          <div class="container --col">
+            <p class="sub">tell us your name</p>
+            <input
+              class="input --custom"
+              id="name"
+              type="text"
+              name="name"
+              value={payload.name}
+              onChange={handleChange}
+              placeholder="Your name"
+            />
+          </div>
         </div>
-        <div className="field-container">
-          <p className="field-title">select your dates:</p>
-          <div className="--row">
-            <div className="--col">
-              <p className="field-tertiaty">pick up date</p>
+        <div class="container --col">
+          <p class="head">email</p>
+          <div class="container --col">
+            <p class="sub">enter a contact email</p>
+            <input
+              class="input --custom"
+              id="email"
+              name="email"
+              value={payload.email}
+              onChange={handleChange}
+              placeholder="Your email address"
+            />
+          </div>
+        </div>
+        <div class="container --col">
+          <p class="head">Pick-up location:</p>
+          <div class="container --col">
+            <p class="sub">the location you would like to pick up your car</p>
+            <select
+              class="input select --custom"
+              id="pickupLocation"
+              name="pickupLocation"
+              value={payload.pickupLocation}
+              onChange={handleChange}
+            >
+              <option value="" disabled hidden>
+                Location
+              </option>
+              <option value="Harbor">Harbor</option>
+              <option value="Hotel">Hotel</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="container --col">
+          <p class="head">Select your dates</p>
+          <div class="container --row">
+            <div class="container --col">
+              <p class="sub">Pick up date</p>
               <input
-                className="input-field"
+                class="input --1 select --custom"
                 id="pickupDate"
                 type="date"
                 name="pickupDate"
@@ -124,10 +159,32 @@ const MobileContactForm = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="--col">
-              <p className="field-tertiaty">return date</p>
+            <div class="container --col --center">
+              <p class="sub">Pick up Time</p>
+              <select
+                class="input --2 select --custom"
+                id="pickupTime"
+                name="pickupTime"
+                value={payload.pickupTime}
+                onChange={handleChange}
+              >
+                <option value="" disabled hidden>
+                  00:00
+                </option>
+                <option value="10.00">10.00am</option>
+                <option value="14.00">14.00pm</option>
+                <option value="17.00">17.00pm</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="container --col">
+          <div class="container --row">
+            <div class="container --col">
+              <p class="sub">drop off date</p>
               <input
-                className="input-field"
+                class="input --1 select --custom"
                 id="returnDate"
                 type="date"
                 name="returnDate"
@@ -140,22 +197,17 @@ const MobileContactForm = () => {
                 onChange={handleChange}
               />
             </div>
-          </div>
-        </div>
-        <div className="field-container">
-          <p className="field-title">choose time:</p>
-          <div className="--row">
-            <div className="--col">
-              <p className="field-tertiaty">pick up time</p>
+            <div class="container --col --center">
+              <p class="sub">drop off Time</p>
               <select
-                className="input-field select"
-                id="pickupTime"
-                name="pickupTime"
-                value={payload.pickupTime}
+                class="input --2 select --custom"
+                id="returnTime"
+                name="returnTime"
+                value={payload.returnTime}
                 onChange={handleChange}
               >
                 <option value="" disabled hidden>
-                  Select Time
+                  00:00
                 </option>
                 <option value="10.00">10.00am</option>
                 <option value="14.00">14.00pm</option>
@@ -163,142 +215,120 @@ const MobileContactForm = () => {
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div className="--col"></div>
           </div>
-
-          <p className="field-tertiaty">return time</p>
-          <select
-            className="input-field select"
-            id="returnTime"
-            name="returnTime"
-            value={payload.returnTime}
-            onChange={handleChange}
-          >
-            <option value="" disabled hidden>
-              Select Time
-            </option>
-            <option value="10.00">10.00am</option>
-            <option value="14.00">14.00pm</option>
-            <option value="17.00">17.00pm</option>
-            <option value="Other">Other</option>
-          </select>
         </div>
-        <div className="field-container">
-          <p className="field-title">pick-up location:</p>
-          <p className="field-tertiaty">choose a location</p>
-          <select
-            className="input-field select"
-            id="pickupLocation"
-            name="pickupLocation"
-            value={payload.pickupLocation}
-            onChange={handleChange}
-          >
-            <option value="" disabled hidden>
-              Location
-            </option>
-            <option value="Harbor">Harbor</option>
-            <option value="Hotel">Hotel</option>
-            <option value="other">Other</option>
-          </select>
-          <button
-            className={`btn ${acceptAgreement ? "--active" : "--disabled"}`}
-            disabled={!acceptAgreement}
-          >
-            {loading ? "spinner" : "send inquiry"}
-          </button>
+        <div className="terms-accept-container">
+          <div
+            className={
+              acceptAgreement ? "check-box check-box__filled" : "check-box"
+            }
+            onClick={() => {
+              handleClick();
+            }}
+          ></div>
+          <p className="terms-accept-text">
+            I agree to the{" "}
+            <NavLink className="--link" to="/privacy-policy">
+              Privacy Policy
+            </NavLink>{" "}
+            terms.
+          </p>
         </div>
+        <button
+          className={`btn ${acceptAgreement ? "--active" : "--disabled"}`}
+          disabled={!acceptAgreement}
+        >
+          {loading ? "spinner" : "send inquiry"}
+        </button>
       </form>
-      <div className="terms-accept-container">
-        <div
-          className={
-            acceptAgreement ? "check-box check-box__filled" : "check-box"
-          }
-          onClick={() => {
-            handleClick();
-          }}
-        ></div>
-        <p className="terms-accept-text">
-          I agree to the{" "}
-          <NavLink className="--link" to="/privacy-policy">
-            Privacy Policy
-          </NavLink>{" "}
-          terms.
-        </p>
-      </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 2rem 1rem;
-  border-radius: 9px;
-  counter-reset: section;
-
-  .--row {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .contact-form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .field-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .field-title {
-    font-size: 1.4rem;
-    text-transform: capitalize;
-    font-weight: 600;
+  .--left {
+    text-align: center;
     color: #0a9695;
   }
 
-  .field-title::after {
-    counter-increment: section;
-    content: counter(section);
-    background-color: rgb(10, 150, 149);
-    width: 1.2rem;
-    height: 1.2rem;
-    line-height: 1.2rem;
-    border-radius: 50%;
-    position: absolute;
-    color: #fff;
-    text-align: center;
-    top: -10px;
-    margin-left: 4px;
-    padding: 0.5rem;
+  .divider {
+    border-bottom: 3px solid #0a9695;
+    width: 100%;
   }
 
-  .field-tertiaty {
-    color: #888;
+  .title {
+    font-size: 3rem;
+  }
+
+  .--center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .--col {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .--row {
+    gap: 1rem;
+  }
+
+  .--1 {
+    max-width: 10em;
+  }
+  .--2 {
+    max-width: 10rem;
+    align-self: flex-end;
+  }
+
+  .--custom {
+    background-color: #b5e0db;
+    color: #666;
+    height: 4rem;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .inner {
+    height: 75vh;
+    gap: 2rem;
+    background-color: #fff;
+    padding: 0 2rem;
+    border-radius: 9px;
+    flex-direction: column;
+  }
+
+  .outer {
+    padding: 2rem 0;
+    background-image: linear-gradient(to right, #0a9695, #0a9695);
+    height: 100vh;
+  }
+
+  .head {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #0a9695;
+  }
+
+  .sub {
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
     font-weight: 600;
     font-size: 1.2rem;
-    text-transform: uppercase;
+    color: #666;
   }
 
-  .input-field {
-    color: #777;
-    font-size: 1.6rem;
-    padding: 0.5rem 1rem;
+  .input {
+    padding: 0 0.5rem;
+    font-size: 2rem;
+    height: 4rem;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-    height: 3.5rem;
-    background-color: rgba(255, 255, 255, 0.2);
-
-    transition: all 0.3s;
-  }
-
-  .select {
-    height: 4.5rem;
+    border-radius: 9px;
   }
 
   .select:hover {
@@ -309,36 +339,21 @@ const Wrapper = styled.section`
     cursor: pointer;
   }
 
-  .input-field:focus {
+  .input:focus {
     outline: none;
     box-shadow: inset 0 0 0 3px #4dd8c7;
     border: none;
   }
 
   .btn {
-    width: 20rem;
-    align-self: center;
-    margin-top: 2rem;
-    color: #fff;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    border: none;
+    font-size: 2rem;
+    padding: 1rem 2rem;
     border-radius: 9px;
-    padding: 1.5rem 0;
-    transition: all 0.3s;
-  }
-
-  .--disabled {
-    background-color: #555;
-  }
-
-  .--active {
+    border: none;
     background-color: #6ac1b7;
-  }
-
-  .--active:hover {
-    cursor: pointer;
-    background-color: #79c7be;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in;
   }
 
   .terms-accept-container {
@@ -368,6 +383,19 @@ const Wrapper = styled.section`
     width: 10px;
     height: 10px;
     cursor: pointer;
+  }
+
+  .--disabled {
+    background-color: #555;
+  }
+
+  .--active {
+    background-color: #6ac1b7;
+  }
+
+  .--active:hover {
+    cursor: pointer;
+    background-color: #79c7be;
   }
 
   .--link {
