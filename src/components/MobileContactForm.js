@@ -4,6 +4,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../context/AppContext";
+import Spinner from "./Spinner";
 
 const MobileContactForm = () => {
   const initState = {
@@ -243,7 +244,7 @@ const MobileContactForm = () => {
           className={`btn ${acceptAgreement ? "--active" : "--disabled"}`}
           disabled={!acceptAgreement}
         >
-          {loading ? "spinner" : "send inquiry"}
+          {loading ? <Spinner /> : "send inquiry"}
         </button>
       </form>
     </Wrapper>
@@ -352,6 +353,11 @@ const Wrapper = styled.section`
   }
 
   .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    min-width: 100px;
     font-size: 2rem;
     padding: 1rem 2rem;
     border-radius: 9px;

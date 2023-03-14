@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import Cookie from "./Cookie";
 import Responce from "./Responce";
 import MobileContactForm from "./MobileContactForm";
+import Spinner from "./Spinner";
 export {
   Navigation,
   Hero,
@@ -17,4 +18,5 @@ export {
   Cookie,
   Responce,
   MobileContactForm,
+  Spinner,
 };
