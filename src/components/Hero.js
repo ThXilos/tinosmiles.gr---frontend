@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ContactForm from "./ContactForm";
 import { ArrowDown, IoCall, GrMail } from "../utils/icons";
+import { NavLink } from "react-router-dom";
 
 import { useGlobalContext } from "../context/AppContext";
 
@@ -34,18 +35,18 @@ const Hero = () => {
           <ArrowDown className="btn__cta__icon" />
           <span>see more</span>
         </button>
-        <button className="--btn --call">
+        <a href="tel:+306937696704" className="--btn --call">
           <IoCall className="btn__cta__icon" />
           <div className="text-container">
             <span className="--btn-text">Call Us</span>
           </div>
-        </button>
-        <button className="--btn --inqu">
+        </a>
+        <NavLink to="/contact" className="--btn --inqu">
           <GrMail className="btn__cta__icon" />
           <div className="text-container">
             <span className="--btn-text">Make an Inquiry</span>
           </div>
-        </button>
+        </NavLink>
       </div>
     </Wrapper>
   );
@@ -60,6 +61,10 @@ const Wrapper = styled.section`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+  * {
+    text-decoration: none;
+  }
 
   .hide {
     display: none;
@@ -169,7 +174,6 @@ const Wrapper = styled.section`
       border-style: none;
       color: #fff;
       padding: 0 2rem;
-
       border-radius: 3px;
     }
 

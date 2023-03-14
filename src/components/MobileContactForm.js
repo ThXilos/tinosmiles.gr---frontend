@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { format } from "date-fns";
 import styled from "styled-components";
 import axios from "axios";
@@ -18,8 +18,13 @@ const MobileContactForm = () => {
 
   const [honeypot, setHoneypot] = useState("");
 
-  const { loading, setLoading, setMessageSuccess, setMessageWarning } =
-    useGlobalContext();
+  const {
+    loading,
+    setLoading,
+    setMessageSuccess,
+    setMessageWarning,
+    setToggleWarning,
+  } = useGlobalContext();
 
   const [acceptAgreement, setAcceptAgreement] = useState(false);
 
@@ -76,6 +81,10 @@ const MobileContactForm = () => {
       }, 3000);
     }
   };
+
+  useEffect(() => {
+    setToggleWarning();
+  }, [setToggleWarning]);
 
   return (
     <Wrapper>
@@ -168,9 +177,7 @@ const MobileContactForm = () => {
                 value={payload.pickupTime}
                 onChange={handleChange}
               >
-                <option value="" disabled hidden>
-                  00:00
-                </option>
+                <option value="" disabled hidden></option>
                 <option value="10.00">10.00am</option>
                 <option value="14.00">14.00pm</option>
                 <option value="17.00">17.00pm</option>
@@ -206,9 +213,7 @@ const MobileContactForm = () => {
                 value={payload.returnTime}
                 onChange={handleChange}
               >
-                <option value="" disabled hidden>
-                  00:00
-                </option>
+                <option value="" disabled hidden></option>
                 <option value="10.00">10.00am</option>
                 <option value="14.00">14.00pm</option>
                 <option value="17.00">17.00pm</option>
@@ -294,12 +299,12 @@ const Wrapper = styled.section`
   }
 
   .inner {
-    height: 75vh;
     gap: 2rem;
     background-color: #fff;
-    padding: 0 2rem;
+    padding: 2rem;
     border-radius: 9px;
     flex-direction: column;
+    justify-content: flex-start;
   }
 
   .outer {
@@ -312,6 +317,7 @@ const Wrapper = styled.section`
     text-transform: capitalize;
     font-weight: 600;
     font-size: 1.4rem;
+    margin-bottom: 1rem;
     color: #0a9695;
   }
 

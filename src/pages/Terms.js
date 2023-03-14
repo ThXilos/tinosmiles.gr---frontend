@@ -5,6 +5,7 @@ import { useGlobalContext } from "../context/AppContext";
 const Terms = () => {
   const { setToggleWarning } = useGlobalContext();
   useEffect(() => {
+    window.scrollTo(0, 0);
     setToggleWarning();
   }, [setToggleWarning]);
   return (
