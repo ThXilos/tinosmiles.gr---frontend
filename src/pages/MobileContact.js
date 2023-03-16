@@ -56,6 +56,8 @@ const Wrapper = styled.div`
   background-color: #ecf1f1;
   padding: 2rem 2rem;
   position: relative;
+  display: flex;
+  justify-content: center;
 
   .module {
     display: flex;
