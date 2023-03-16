@@ -30,11 +30,11 @@ const Guide = () => {
           <div className="icon-list">
             <div className="list-item">
               <BsEyeFill />
-              <p>beutifull view</p>
+              <p>beautifull view</p>
             </div>
             <div className="list-item">
               <BiDrink />
-              <p>coctails & driks</p>
+              <p>cocktails & driks</p>
             </div>
             <div className="list-item">
               <FaCoffee />
