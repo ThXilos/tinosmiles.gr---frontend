@@ -20,6 +20,44 @@ const Guide = () => {
   return (
     <Wrapper>
       <div className="card-container">
+        <div className="--card --title-card">
+          <h1 className="--primary">tinos island guide</h1>
+          <p className="info-text">
+            Welcome to our guide of Tinos island. We have put together some of
+            our favorite villages to visit and use icons to give some tips on
+            what to expect once you get there.
+          </p>
+          <div className="icon-list">
+            <div className="list-item">
+              <BsEyeFill />
+              <p>beutifull view</p>
+            </div>
+            <div className="list-item">
+              <BiDrink />
+              <p>coctails & driks</p>
+            </div>
+            <div className="list-item">
+              <FaCoffee />
+              <p>traditional cafeteria</p>
+            </div>
+            <div className="list-item">
+              <GiKnifeFork />
+              <p>taverns & restaurants</p>
+            </div>
+            <div className="list-item">
+              <TbSunset />
+              <p>sunset view</p>
+            </div>
+            <div className="list-item">
+              <MdPhotoCamera />
+              <p>picturesque scenery</p>
+            </div>
+            <div className="list-item">
+              <MdMuseum />
+              <p>museum & local art</p>
+            </div>
+          </div>
+        </div>
         {vilages.map((vilage, index) => {
           return (
             <div
@@ -71,6 +109,39 @@ const Guide = () => {
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
+
+  .icon-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+
+  .list-item {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.8rem;
+    align-items: center;
+    color: #666;
+
+    p {
+      font-size: 1.2rem;
+      text-transform: capitalize;
+    }
+  }
+
+  .--title-card {
+    background-color: #ecf1f1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .--primary {
+    padding: 1rem;
+    font-size: 3rem;
+    color: #0a9695;
+    text-transform: capitalize;
+  }
 
   .card-container {
     max-width: 1200px;
