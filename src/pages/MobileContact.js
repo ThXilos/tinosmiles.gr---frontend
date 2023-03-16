@@ -13,7 +13,11 @@ const MobileContact = () => {
     <Wrapper>
       <div
         className={`module ${messageSuccess ? "" : "hide"}`}
-        style={{ backgroundColor: "#d4edda", color: "#155724" }}
+        style={{
+          backgroundColor: "#d4edda",
+          color: "#155724",
+          border: "1px solid green",
+        }}
       >
         <div
           className="--close"
@@ -27,7 +31,11 @@ const MobileContact = () => {
       </div>
       <div
         className={`module ${messageWarning ? "" : "hide"}`}
-        style={{ backgroundColor: "#fff3cd", color: "#856404" }}
+        style={{
+          backgroundColor: "#fff3cd",
+          color: "#856404",
+          border: "1px solid #ad4a46",
+        }}
       >
         <div
           className="--close"
@@ -59,7 +67,7 @@ const Wrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     height: 200px;
-    width: 80%;
+    width: 85%;
     position: absolute;
     border-radius: 9px;
   }
@@ -79,7 +87,7 @@ const Wrapper = styled.div`
   }
 
   .--text {
-    margin: 0 0 8rem 0;
+    margin: 0 0 9rem 0;
   }
 `;
 export default MobileContact;

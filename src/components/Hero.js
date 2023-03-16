@@ -110,7 +110,7 @@ const Wrapper = styled.section`
     top: -17%;
     left: 50%;
     transform: translateX(-50%);
-    width: 30%;
+    width: 40%;
   }
 
   .btn__cta {
