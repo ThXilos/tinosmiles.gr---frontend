@@ -23,9 +23,7 @@ const MobileContact = () => {
         >
           X
         </div>
-        <p className="--text">
-          We got your message, we will get right back to you.
-        </p>
+        <p className="--text">We got your message.</p>
       </div>
       <div
         className={`module ${messageWarning ? "" : "hide"}`}
@@ -63,6 +61,7 @@ const Wrapper = styled.div`
     height: 200px;
     width: 80%;
     position: absolute;
+    border-radius: 9px;
   }
 
   .hide {
