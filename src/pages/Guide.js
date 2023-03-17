@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../context/AppContext";
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { vilages } from "../utils/vilages";
 import {
@@ -19,6 +20,30 @@ const Guide = () => {
   }, [setToggleWarning]);
   return (
     <Wrapper>
+      <Helmet>
+        <title>Island Guide - Tinos Miles</title>
+        <meta
+          name="description"
+          content="Discover the best places to visit and things to do in Tinos, Greece with our island guide. From beaches to museums, we've got everything you need to plan your perfect trip."
+        />
+        <link
+          rel="canonical"
+          href="https://www.tinosmiles.gr/tinos-island-guide"
+        />
+        <meta property="og:title" content="Island Guide - Tinos Miles" />
+        <meta
+          property="og:description"
+          content="Discover the best places to visit and things to do in Tinos, Greece with our island guide. From beaches to museums, we've got everything you need to plan your perfect trip."
+        />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/dtekdjcan/image/upload/v1678453185/tinosmiles.gr/Start-Exploring_kfvklb.webp"
+        />
+        <meta
+          property="og:url"
+          content="https://www.tinosmiles.gr/tinos-island-guide"
+        />
+      </Helmet>
       <div className="card-container">
         <div className="--card --title-card">
           <h1 className="--primary">tinos island guide</h1>
