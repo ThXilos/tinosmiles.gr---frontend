@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useGlobalContext } from "../context/AppContext";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
@@ -15,6 +15,7 @@ import {
 
 const Guide = () => {
   const { setToggleWarning } = useGlobalContext();
+  const [route, setRoute] = useState("");
   useEffect(() => {
     setToggleWarning();
   }, [setToggleWarning]);
@@ -44,8 +45,8 @@ const Guide = () => {
           content="https://www.tinosmiles.gr/tinos-island-guide"
         />
       </Helmet>
-      <div className="card-container">
-        <div className="--card --title-card">
+      <div className="side-options">
+        <div className="--card --title-card --side">
           <h1 className="--primary">tinos island guide</h1>
           <p className="info-text">
             Welcome to our guide of Tinos island. We have put together some of
@@ -82,8 +83,37 @@ const Guide = () => {
               <p>museum & local art</p>
             </div>
           </div>
+          <p className="info-text">
+            We have some prefered routes setup for you that group up the vilages
+            by location.
+          </p>
+          <div className="router-btn-container">
+            <p
+              className={`route-select ${route === "1" ? "--active" : ""}`}
+              onClick={() => setRoute("1")}
+            >
+              Route 1{" "}
+            </p>
+            <p
+              className={`route-select ${route === "2" ? "--active" : ""}`}
+              onClick={() => setRoute("2")}
+            >
+              Route 2
+            </p>
+            <p
+              className={`route-select ${route === "3" ? "--active" : ""}`}
+              onClick={() => setRoute("3")}
+            >
+              Route 3
+            </p>
+          </div>
         </div>
+      </div>
+      <div className="card-container">
         {vilages.map((vilage, index) => {
+          if (route !== vilage.group && route) {
+            return "";
+          }
           return (
             <div
               key={index}
@@ -134,6 +164,44 @@ const Guide = () => {
 const Wrapper = styled.section`
   display: flex;
   justify-content: center;
+
+  .side-options {
+    padding: 3rem 0 0 1rem;
+  }
+
+  .route-select {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border: 1px solid #0a9695;
+    color: #0a9695;
+    transition: all 0.3s ease-in;
+  }
+
+  .--active {
+    background-color: #0a9695;
+    color: #fff;
+  }
+
+  .route-select:hover {
+    cursor: pointer;
+    background-color: #0a9695;
+    color: #fff;
+  }
+
+  .--card {
+    height: 350px;
+    width: 300px;
+  }
+
+  .--side {
+    height: auto;
+  }
+
+  .router-btn-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+  }
 
   .icon-list {
     display: grid;
@@ -187,11 +255,6 @@ const Wrapper = styled.section`
     flex-direction: row;
   }
 
-  .--card {
-    height: 350px;
-    width: 300px;
-  }
-
   .icon-container {
     padding: 1rem;
     gap: 1rem;
@@ -232,6 +295,12 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: 768px) {
+    flex-direction: column;
+
+    .side-options {
+      padding: 3rem 1rem;
+    }
+
     .card-container {
       padding: 3rem 1rem;
     }

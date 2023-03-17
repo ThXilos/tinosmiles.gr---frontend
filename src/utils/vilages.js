@@ -45,4 +45,49 @@ export const vilages = [
     order: "4",
     group: "2",
   },
+  {
+    name: "falatados",
+    img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    icons: ["1", "2", "6"],
+    order: "5",
+    group: "2",
+  },
+  {
+    name: "dio xoria",
+    img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    icons: ["1", "2", "6"],
+    order: "6",
+    group: "2",
+  },
+  {
+    name: "arnados",
+    img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    icons: ["1", "2", "6"],
+    order: "7",
+    group: "2",
+  },
+  {
+    name: "komi",
+    img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    icons: ["1", "2", "6"],
+    order: "8",
+    group: "2",
+  },
+  {
+    name: "agapi",
+    img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    icons: ["1", "2", "6"],
+    order: "9",
+    group: "2",
+  },
 ];
