@@ -107,6 +107,26 @@ const Guide = () => {
               Route 3
             </p>
           </div>
+          <div>
+            <p className="info-text --ver1">
+              {!route &&
+                "You are now currently viewing all the villages in the guide, select a route to see our proposals."}
+              {route === "1" && (
+                <div>
+                  <p>Time to spend: The whole day.</p>
+                  <p className="--ver2">
+                    This will be the longest route in the guide. We propose
+                    taking a walk in Kardiani, eating in one of the fish taverns
+                    in Panormos, having a traditional desssert in the central
+                    square of Pirgos and finally enjoying the sunset with a
+                    drink in one the all day bars in Isternia on your way back.
+                  </p>
+                </div>
+              )}
+              {route === "2" && "route 2 information."}
+              {route === "3" && "route 3 information."}
+            </p>
+          </div>
         </div>
       </div>
       <div className="card-container">
@@ -292,6 +312,14 @@ const Wrapper = styled.section`
     letter-spacing: 1.2px;
     line-height: 1.5;
     padding: 1rem;
+  }
+  .--ver1 {
+    background-color: #0a9695;
+    color: #fff;
+  }
+
+  .--ver2 {
+    font-size: 1.2rem;
   }
 
   @media (max-width: 768px) {
