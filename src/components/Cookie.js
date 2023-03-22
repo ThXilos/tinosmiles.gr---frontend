@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 const Cookie = () => {
   const checkCookieStatus = () => {
-    console.log(document.cookie);
-    return document.cookie.slice(document.cookie.indexOf("=") + 1) === "true";
+    const cookieArr = document.cookie.split(";");
+    return cookieArr[cookieArr.length - 1] === "acceptedCookies=true";
   };
 
   const [acceptCookie, setAcceptCookie] = useState(checkCookieStatus());
