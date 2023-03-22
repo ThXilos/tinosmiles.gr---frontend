@@ -85,10 +85,12 @@ const Content = () => {
         </div>
         <div className="col col-4">
           <div className="container --cta-box bg1">
-            <p className="tertiary --bg-text">Explore the island.</p>
+            <p className="tertiary --bg-text">
+              Quick pick-up feature coming soon
+            </p>
           </div>
           <div className="container --cta-box bg2">
-            <p className="tertiary --bg-text">Explore the island.</p>
+            <p className="tertiary --bg-text">Explore the island</p>
           </div>
         </div>
       </div>
