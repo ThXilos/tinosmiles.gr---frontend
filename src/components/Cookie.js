@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 const Cookie = () => {
   const checkCookieStatus = () => {
     const cookieArr = document.cookie.split(";");
-    console.log(cookieArr[cookieArr.length - 1] === "acceptedCookies=true");
-    return cookieArr[cookieArr.length - 1] === "acceptedCookies=true";
+    console.log(cookieArr[0]);
+    return cookieArr[0] === "acceptedCookies=true";
   };
 
   const [acceptCookie, setAcceptCookie] = useState(checkCookieStatus());
@@ -14,7 +14,6 @@ const Cookie = () => {
     setAcceptCookie(true);
     document.cookie =
       "acceptedCookies=true; expires=Thu, 31 Dec 2099 23:59:59 GMT; path=/; SameSite=None; Secure";
-    console.log(document.cookie);
   };
 
   return acceptCookie ? (
