@@ -12,6 +12,7 @@ const Cookie = () => {
     setAcceptCookie(true);
     document.cookie =
       "acceptedCookies=true; expires=Thu, 31 Dec 2099 23:59:59 GMT; path=/; SameSite=None; Secure";
+    console.log(document.cookie);
   };
 
   return acceptCookie ? (
