@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 const Cookie = () => {
   const checkCookieStatus = () => {
+    console.log(document.cookie);
     return document.cookie.slice(document.cookie.indexOf("=") + 1) === "true";
   };
 
