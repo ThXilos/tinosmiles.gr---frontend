@@ -4,6 +4,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../context/AppContext";
+import Spinner from "./Spinner";
 
 const ContactForm = () => {
   const initState = {
@@ -192,7 +193,7 @@ const ContactForm = () => {
             className={`btn ${acceptAgreement ? "--active" : "--disabled"}`}
             disabled={!acceptAgreement}
           >
-            {loading ? "spinner" : "send inquiry"}
+            {loading ? <Spinner /> : "send inquiry"}
           </button>
         </div>
       </form>
