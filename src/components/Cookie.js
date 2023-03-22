@@ -5,7 +5,10 @@ const Cookie = () => {
   const checkCookieStatus = () => {
     const cookieArr = document.cookie.split(";");
     console.log(cookieArr);
-    return cookieArr[2] === " acceptedCookies=true";
+    return (
+      cookieArr[2] === " acceptedCookies=true" ||
+      cookieArr[0] === " acceptedCookies=true"
+    );
   };
 
   const [acceptCookie, setAcceptCookie] = useState(checkCookieStatus());
