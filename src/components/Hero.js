@@ -8,6 +8,14 @@ import { useGlobalContext } from "../context/AppContext";
 const Hero = () => {
   const { messageSuccess, messageWarning, setToggleMobileMenu } =
     useGlobalContext();
+
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 900,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <Wrapper>
       <div className="hero-text-container">
@@ -32,7 +40,7 @@ const Hero = () => {
         <ContactForm />
       </div>
       <div className="btn-container">
-        <button className="btn__cta">
+        <button className="btn__cta" onClick={() => handleScroll()}>
           <ArrowDown className="btn__cta__icon" />
           <span>see more</span>
         </button>

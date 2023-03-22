@@ -38,7 +38,7 @@ const Guide = () => {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dtekdjcan/image/upload/v1678453185/tinosmiles.gr/Start-Exploring_kfvklb.webp"
+          content="https://res.cloudinary.com/dtekdjcan/image/upload/v1679470116/tinosmiles.gr/Meta%20OG/go_tinos-miles-guide_dhymjk.webp"
         />
         <meta
           property="og:url"

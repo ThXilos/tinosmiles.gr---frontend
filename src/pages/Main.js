@@ -22,7 +22,7 @@ const Main = () => {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-front-door_wyfr0h.webp"
+          content="https://res.cloudinary.com/dtekdjcan/image/upload/v1679470116/tinosmiles.gr/Meta%20OG/go_tinos-miles-home_oh9xa0.webp"
         />
         <meta property="og:url" content="https://www.tinosmiles.gr/" />
       </Helmet>

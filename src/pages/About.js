@@ -24,7 +24,7 @@ const About = () => {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-fast-pick-up-img_lfwchy.webp"
+          content="https://res.cloudinary.com/dtekdjcan/image/upload/v1679470116/tinosmiles.gr/Meta%20OG/go_tinos-miles-about_quuswo.webp"
         />
         <meta property="og:url" content="https://www.tinosmiles.gr/about" />
       </Helmet>
