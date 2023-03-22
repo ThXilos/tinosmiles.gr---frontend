@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-
+import { NavLink } from "react-router-dom";
 const Cookie = () => {
   const checkCookieStatus = () => {
     return document.cookie.slice(document.cookie.indexOf("=") + 1) === "true";
@@ -21,9 +21,11 @@ const Cookie = () => {
       <h2 className="--title">We use cookies 🍪</h2>
       <p className="--text">
         Our websites use cookies (also from third parties) for functional and
-        analytical purposes, and to show you personalised advertisement. You can
-        adjust this in Cookie Settings or learn more by reading our cookie
-        policy.
+        analytical purposes. Learn more by reading our{" "}
+        <NavLink to="/privacy-policy" className="--link">
+          privacy policy
+        </NavLink>
+        .
       </p>
       <button className="btn-cookie" onClick={handleClick}>
         accept
@@ -33,6 +35,10 @@ const Cookie = () => {
 };
 
 const Wrapper = styled.div`
+  * {
+    text-decoration: none;
+  }
+
   position: fixed;
   bottom: 0;
   left: 0;
@@ -45,6 +51,10 @@ const Wrapper = styled.div`
   border-radius: 9px;
   margin: 1rem;
   box-shadow: 0px 0px 10px;
+
+  .--link {
+    color: #6ac1b7;
+  }
 
   .--title {
     font-size: 2.2rem;
