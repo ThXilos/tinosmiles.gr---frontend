@@ -154,7 +154,7 @@ const Wrapper = styled.section`
     letter-spacing: 1.2px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
     height: 70vh;
     justify-content: space-between;
     padding: 2rem 0 2rem;

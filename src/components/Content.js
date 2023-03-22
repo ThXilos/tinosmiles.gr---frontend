@@ -85,9 +85,8 @@ const Content = () => {
         </div>
         <div className="col col-4">
           <div className="container --cta-box bg1">
-            <p className="tertiary --bg-text">
-              Quick pick-up feature coming soon
-            </p>
+            <p className="tertiary --bg-text">Quick pick-up Service</p>
+            <p className="tertiary --bg-text --information">coming soon</p>
           </div>
           <div className="container --cta-box bg2">
             <p className="tertiary --bg-text">Explore the island</p>
@@ -262,6 +261,26 @@ const Wrapper = styled.section`
     flex-direction: column;
     gap: 2rem;
     padding: 1rem 1rem;
+  }
+
+  .--information{
+    align-self:flex-end;
+    text-transform:uppercase;
+    font-size:1.2rem;
+    margin-top:1rem;
+    background-color:#ffc107;
+    
+    color:#666;
+  }
+
+  @media(max-width:1200px){
+   .col-container{
+       flex-wrap:wrap;
+   }
+
+   .col-2{
+    display:none;
+   }
   }
 
   @media (max-width: 768px) {

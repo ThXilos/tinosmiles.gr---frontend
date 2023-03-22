@@ -16,11 +16,17 @@ const Footer = () => {
       <div className="container --col">
         <div className="col-1">
           <p className="--col-title">quick payment option</p>
-          <img
-            src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677243757/tinosmiles.gr/viva-payment-image_de4q7r.png"
-            alt="viva wallet online payment banner"
-            className="payment-image"
-          />
+          <a
+            href="https://pay.vivawallet.com/tinos-miles-rent-a-car"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677243757/tinosmiles.gr/viva-payment-image_de4q7r.png"
+              alt="viva wallet online payment banner"
+              className="payment-image"
+            />
+          </a>
         </div>
         <div className="col-2">
           <p className="--col-title">office hours 9:00 am - 9:00 pm</p>
@@ -158,7 +164,13 @@ const Wrapper = styled.section`
     font-size: 2rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
+    .--col {
+      padding: 4rem 2rem;
+    }
+  }
+
+  @media (max-width: 950px) {
     .--col {
       flex-direction: column;
       align-items: flex-start;
