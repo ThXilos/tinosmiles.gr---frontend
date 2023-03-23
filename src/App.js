@@ -10,6 +10,7 @@ import {
   Terms,
   Guide,
   MobileContact,
+  Quick,
 } from "./pages";
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route exact path="/" element={<Main />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/tinos-island-guide" element={<Guide />} />
-        <Route exact path="/quick-pickup" element={<h1>Quick-Pickup</h1>} />
+        <Route exact path="/quick-pickup" element={<Quick />} />
         <Route exact path="/safety" element={<SafetyInfo />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/privacy-policy" element={<Privacy />} />

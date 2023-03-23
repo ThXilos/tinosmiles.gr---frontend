@@ -6,7 +6,9 @@ import Privacy from "./Privacy";
 import Terms from "./Terms";
 import Guide from "./Guide";
 import MobileContact from "./MobileContact";
+import Quick from "./QuickPickup";
 export {
+  Quick,
   Privacy,
   Main,
   SafetyInfo,
