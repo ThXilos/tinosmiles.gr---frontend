@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <Wrapper>
       <Helmet>
-        <title>Tinos Miles - Car Rental in Tinos, Greece</title>
+        <title>Tinos Miles - Rent a car in Tinos, Greece</title>
         <meta
           name="description"
           content="Rent a car in Tinos, Greece with Tinos Miles. We offer small economy cars at competitive prices to help you explore the island in style and comfort."

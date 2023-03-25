@@ -35,7 +35,7 @@ const Hero = () => {
           className={`module ${messageWarning ? "" : "hide"}`}
           style={{ backgroundColor: "#fff3cd", color: "#856404" }}
         >
-          <p>woops, is your email correct?</p>
+          <p>woops, did you enter your name or your email correctly?</p>
         </div>
         <ContactForm />
       </div>
