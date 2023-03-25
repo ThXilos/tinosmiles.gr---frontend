@@ -27,6 +27,10 @@ const Guide = () => {
           name="description"
           content="Discover the best places to visit and things to do in Tinos, Greece with our island guide. From beaches to museums, we've got everything you need to plan your perfect trip."
         />
+        <meta
+          name="keywords"
+          content="car rental, Tinos Island guide, rent a car, Greece, exlore,vilages,activities"
+        />
         <link
           rel="canonical"
           href="https://www.tinosmiles.gr/tinos-island-guide"

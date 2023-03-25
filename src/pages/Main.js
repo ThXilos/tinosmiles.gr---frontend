@@ -11,6 +11,10 @@ const Main = () => {
           name="description"
           content="Rent a car in Tinos, Greece with Tinos Miles. We offer small economy cars at competitive prices to help you explore the island in style and comfort."
         />
+        <meta
+          name="keywords"
+          content="car rental, Tinos Island, rent a car, Greece, vacation"
+        />
         <link rel="canonical" href="https://www.tinosmiles.gr/" />
         <meta
           property="og:title"
