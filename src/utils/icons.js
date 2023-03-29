@@ -30,7 +30,7 @@ import {
 } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { IoCall } from "react-icons/io5";
-import { MdMuseum } from "react-icons/md";
+import { MdMuseum, MdLocalGasStation } from "react-icons/md";
 
 import { RiMenuFoldFill, RiMenuUnfoldFill } from "react-icons/ri";
 
@@ -62,4 +62,5 @@ export {
   MdPhotoCamera,
   RiMenuFoldFill,
   RiMenuUnfoldFill,
+  MdLocalGasStation,
 };

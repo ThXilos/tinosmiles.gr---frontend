@@ -9,6 +9,7 @@ import {
   BsFillDoorOpenFill,
   BsTelephone,
   HiOutlineMail,
+  MdLocalGasStation,
 } from "../utils/icons";
 
 const Content = () => {
@@ -84,12 +85,19 @@ const Content = () => {
           </div>
         </div>
         <div className="col col-4">
-          <div className="container --cta-box bg1">
+          <div className="container --cta-box bg1 col-item-1">
             <p className="tertiary --bg-text">Quick pick-up Service</p>
             <p className="tertiary --bg-text --information">coming soon</p>
           </div>
-          <div className="container --cta-box bg2">
+          <div className="container --cta-box bg2 col-item-2">
             <p className="tertiary --bg-text">Explore the island</p>
+          </div>
+          <div className="container --cta-box bg3 col-item-3">
+            <p className="tertiary --bg-text">Open Gas Station:</p>
+            <p className="tertiary --bg-text --information">
+              Sunday: 02/04/2023
+            </p>
+            <MdLocalGasStation className="icon-gas" />
           </div>
         </div>
       </div>
@@ -124,7 +132,11 @@ const Wrapper = styled.section`
   }
   .col-4{
 
-  }  
+  } 
+  
+  .col-5{
+    display:none;
+  }
 
   .--cta-box{
     height:48%;
@@ -139,6 +151,10 @@ const Wrapper = styled.section`
 
   .bg2{
     background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-explore-image_ukkkvn.webp);
+  }
+
+  .bg3{
+    background-color:#0a9695;
   }
 
   .--bg-text{
@@ -273,6 +289,10 @@ const Wrapper = styled.section`
     color:#666;
   }
 
+  .col-item-3{
+    display:none;
+  }
+
   @media(max-width:1200px){
    .col-container{
        flex-wrap:wrap;
@@ -300,19 +320,29 @@ const Wrapper = styled.section`
 
     .col-1{
       height:auto;
-      order:2;
-    }
-
-    .col-2{
-      order:1;
-    }
-
-    .col-3{
-      order:3;
     }
 
     .col-4{
-      order:4;
+      height:80rem;
+      gap:2rem;
+    }
+
+    .col-item-1{
+        order:3;
+    }
+
+    .col-item-2{
+      order:1;
+    }
+
+    .col-item-3{
+      order:2;
+      display:flex;
+    }
+    
+    .icon-gas{
+      align-self:center;
+      font-size:10rem;
     }
   }
 `;
