@@ -69,6 +69,7 @@ const MobileContactForm = () => {
       setMessageSuccess(true);
       setLoading(false);
       setPayload(initState);
+      setAcceptAgreement(false);
       setTimeout(() => {
         setMessageSuccess(false);
       }, 3000);
