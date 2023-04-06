@@ -41,7 +41,7 @@ const ContactForm = () => {
   };
 
   const handleHoneypot = (e) => {
-    setHoneypot(e.traget.value);
+    setHoneypot(e.target.value);
   };
 
   const handleSubmit = async (e) => {
@@ -64,9 +64,10 @@ const ContactForm = () => {
       setMessageSuccess(true);
       setLoading(false);
       setPayload(initState);
+      setAcceptAgreement(false);
       setTimeout(() => {
         setMessageSuccess(false);
-      }, 3000);
+      }, 6000);
 
       console.log(res.data.message);
     } catch (err) {
@@ -74,7 +75,7 @@ const ContactForm = () => {
       setLoading(false);
       setTimeout(() => {
         setLoading(false);
-      }, 3000);
+      }, 5000);
     }
   };
 
@@ -150,9 +151,9 @@ const ContactForm = () => {
             <option value="" disabled hidden>
               Select Time
             </option>
-            <option value="10.00">10.00am</option>
-            <option value="14.00">14.00pm</option>
-            <option value="17.00">17.00pm</option>
+            <option value="10.00am">10.00am</option>
+            <option value="14.00pm">14.00pm</option>
+            <option value="17.00pm">17.00pm</option>
             <option value="Other">Other</option>
           </select>
           <p className="field-tertiaty">return time</p>
@@ -166,9 +167,9 @@ const ContactForm = () => {
             <option value="" disabled hidden>
               Select Time
             </option>
-            <option value="10.00">10.00am</option>
-            <option value="14.00">14.00pm</option>
-            <option value="17.00">17.00pm</option>
+            <option value="10.00am">10.00am</option>
+            <option value="14.00pm">14.00pm</option>
+            <option value="17.00pm">17.00pm</option>
             <option value="Other">Other</option>
           </select>
         </div>
