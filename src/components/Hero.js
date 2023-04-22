@@ -222,6 +222,12 @@ const Wrapper = styled.section`
       background-color: #79c7be;
     }
   }
+
+  @media (max-width: 375px) {
+    .--btn {
+      width: 310px;
+    }
+  }
 `;
 
 export default Hero;
