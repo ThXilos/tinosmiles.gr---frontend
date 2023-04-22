@@ -12,6 +12,24 @@ import {
   MdLocalGasStation,
 } from "../utils/icons";
 
+const gasStationInfo = [
+  {
+    company: "Elin",
+    hours: "",
+    location: "https://goo.gl/maps/SrWnQuZadarigcs49",
+  },
+  {
+    company: "Aegean",
+    hours: "",
+    location: "https://goo.gl/maps/fYSGpLyU8C17Y1Um9",
+  },
+  {
+    company: "Elin",
+    hours: "",
+    location: "https://goo.gl/maps/S8WXY8Joi6bmKDeR7",
+  },
+];
+
 const Content = () => {
   return (
     <Wrapper>
@@ -95,9 +113,22 @@ const Content = () => {
           <div className="container --cta-box bg3 col-item-3">
             <p className="tertiary --bg-text">Open Gas Station:</p>
             <p className="tertiary --bg-text --information">
-              Sunday: 02/04/2023
+              Sunday: 23/04/2023
             </p>
             <MdLocalGasStation className="icon-gas" />
+            <div className="station-list">
+              {gasStationInfo.map((el, index) => {
+                return (
+                  <div key={index} className="station-list-item">
+                    <p className="--text">{el.company}</p>
+                    <a href={el.location} target="_blank" rel="noreferrer">
+                      {" "}
+                      <HiLocationMarker className="station-location-ico" />
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -304,6 +335,30 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: 768px) {
+
+    .station-list{
+    display:flex;
+    flex-direction: row;
+    justify-content:center;
+    gap:2rem;
+    }
+
+    .station-list-item{
+      display:flex;
+      gap:0.3rem;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .station-location-ico{
+      font-size:2rem;
+      color:#fff;
+    }
+
+    .--text{
+      font-size:1.8rem;
+    }
+
     .col-container{
       flex-direction:column;
       gap:2rem;
