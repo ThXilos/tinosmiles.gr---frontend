@@ -175,7 +175,7 @@ const Guide = () => {
                 <p className="--title">{vilage.name}</p>
               </div>
               <div className="info-container">
-                <p className="info-text">{vilage.description}?</p>
+                <p className="info-text">{vilage.description}</p>
               </div>
             </div>
           );
