@@ -127,8 +127,8 @@ const Guide = () => {
                   </p>
                 </div>
               )}
-              {route === "2" && "route 2 information."}
-              {route === "3" && "route 3 information."}
+              {route === "2" && "Under Construction"}
+              {route === "3" && "Under Construction"}
             </p>
           </div>
         </div>
