@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="container --cp">
-        <p className="cp-text">tinos miles &#169; 2019-2023</p>
+        <p className="cp-text">tinos miles &#169; 2024</p>
         <div className="container --sis">
           <a
             href="https://www.instagram.com/tinosmiles/"

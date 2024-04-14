@@ -127,8 +127,8 @@ const Guide = () => {
                   </p>
                 </div>
               )}
-              {route === "2" && "Under Construction 😝"}
-              {route === "3" && "Under Construction 😝"}
+              {route === "2" && "Under Construction"}
+              {route === "3" && "Under Construction"}
             </p>
           </div>
         </div>
@@ -136,59 +136,55 @@ const Guide = () => {
       <div className="card-container">
         {route === "1" ? (
           vilages.map((vilage, index) => {
-            // if (route !== vilage.group && route) {
-            //   return "";
-            // }
-            if (route !== "1") {
+            if (route !== vilage.group) {
               return "";
             }
-            if (vilage.group === "1") {
-              return (
+            return (
+              <div
+                key={index}
+                className="--card --flex-col"
+                style={{ order: `${vilage.order}` }}
+              >
                 <div
-                  key={index}
-                  className="--card --flex-col"
-                  style={{ order: `${vilage.order}` }}
+                  className="title-container --flex-row"
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.5)),url(${vilage.img})`,
+                  }}
                 >
-                  <div
-                    className="title-container --flex-row"
-                    style={{
-                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.5)),url(${vilage.img})`,
-                    }}
-                  >
-                    <div className="icon-container --flex-col">
-                      {vilage.icons.map((icon, index) => {
-                        switch (icon) {
-                          case "1":
-                            return <BsEyeFill />;
-                          case "2":
-                            return <BiDrink />;
-                          case "3":
-                            return <FaCoffee />;
-                          case "4":
-                            return <GiKnifeFork />;
-                          case "5":
-                            return <TbSunset />;
-                          case "6":
-                            return <MdPhotoCamera />;
-                          case "7":
-                            return <MdMuseum />;
-                          default:
-                            return "";
-                        }
-                      })}
-                    </div>
-                    <p className="--title">{vilage.name}</p>
+                  <div className="icon-container --flex-col">
+                    {vilage.icons.map((icon, index) => {
+                      switch (icon) {
+                        case "1":
+                          return <BsEyeFill />;
+                        case "2":
+                          return <BiDrink />;
+                        case "3":
+                          return <FaCoffee />;
+                        case "4":
+                          return <GiKnifeFork />;
+                        case "5":
+                          return <TbSunset />;
+                        case "6":
+                          return <MdPhotoCamera />;
+                        case "7":
+                          return <MdMuseum />;
+                        default:
+                          return "";
+                      }
+                    })}
                   </div>
-                  <div className="info-container">
-                    <p className="info-text">{vilage.description}</p>
-                  </div>
+                  <p className="--title">{vilage.name}</p>
                 </div>
-              );
-            }
+                <div className="info-container">
+                  <p className="info-text">{vilage.description}</p>
+                </div>
+              </div>
+            );
           })
         ) : (
           <div className="under-construction-container">
-            <p>We are working hard to get this next part ready.. 😎</p>
+            <p>We are still working on this part...</p>
+            <p>😎</p>
           </div>
         )}
       </div>
@@ -207,6 +203,9 @@ const Wrapper = styled.section`
     height: 100px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
 
     p {
       font-size: 3rem;
@@ -354,6 +353,7 @@ const Wrapper = styled.section`
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 0;
+    align-items: center;
 
     .under-construction-container {
       p {
