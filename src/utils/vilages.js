@@ -37,8 +37,7 @@ export const vilages = [
   {
     name: "volax",
     img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
-    description:
-      "Take a walk between this unique geology,olny found around this village.",
+    description: "Gathering information 😃 ",
     icons: ["3", "4", "6"],
     order: "4",
     group: "2",
@@ -46,8 +45,7 @@ export const vilages = [
   {
     name: "falatados",
     img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    description: "Gathering information 😍",
     icons: ["3", "4", "6"],
     order: "5",
     group: "2",
@@ -55,8 +53,7 @@ export const vilages = [
   {
     name: "dio xoria",
     img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    description: "Gathering information 😃",
     icons: ["1", "2", "3", "4", "6"],
     order: "6",
     group: "3",
@@ -64,8 +61,7 @@ export const vilages = [
   {
     name: "arnados",
     img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    description: "Gathering information 😍",
     icons: ["1", "3", "4", "6"],
     order: "7",
     group: "3",
@@ -73,8 +69,7 @@ export const vilages = [
   {
     name: "triantaros",
     img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    description: "Gathering information 👀",
     icons: ["1", "2", "3", "4", "6"],
     order: "7",
     group: "3",
@@ -82,8 +77,7 @@ export const vilages = [
   {
     name: "komi",
     img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    description: "Gathering information 😍",
     icons: ["2", "6"],
     order: "8",
     group: "2",
@@ -91,8 +85,7 @@ export const vilages = [
   {
     name: "agapi",
     img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    description: "Gathering information 👀",
     icons: ["1", "2", "4", "6"],
     order: "9",
     group: "2",
@@ -100,8 +93,7 @@ export const vilages = [
   {
     name: "krokos",
     img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    description: "Gathering information 😍",
     icons: ["1", "2", "4", "6"],
     order: "9",
     group: "2",
@@ -109,8 +101,7 @@ export const vilages = [
   {
     name: "loutra",
     img: "https://res.cloudinary.com/dtekdjcan/image/upload/v1678441225/tinosmiles.gr/vilages/tinos-miles-volax-vilage_bh7p5n.webp",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, eius!",
+    description: "Gathering information 😃",
     icons: ["1", "2", "4", "6"],
     order: "9",
     group: "2",

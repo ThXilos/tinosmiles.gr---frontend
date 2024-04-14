@@ -15,7 +15,7 @@ import {
 
 const Guide = () => {
   const { setToggleWarning } = useGlobalContext();
-  const [route, setRoute] = useState("");
+  const [route, setRoute] = useState("1");
   useEffect(() => {
     setToggleWarning();
   }, [setToggleWarning]);
@@ -127,59 +127,70 @@ const Guide = () => {
                   </p>
                 </div>
               )}
-              {route === "2" && "Under Construction"}
-              {route === "3" && "Under Construction"}
+              {route === "2" && "Under Construction 😝"}
+              {route === "3" && "Under Construction 😝"}
             </p>
           </div>
         </div>
       </div>
       <div className="card-container">
-        {vilages.map((vilage, index) => {
-          if (route !== vilage.group && route) {
-            return "";
-          }
-          return (
-            <div
-              key={index}
-              className="--card --flex-col"
-              style={{ order: `${vilage.order}` }}
-            >
-              <div
-                className="title-container --flex-row"
-                style={{
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.5)),url(${vilage.img})`,
-                }}
-              >
-                <div className="icon-container --flex-col">
-                  {vilage.icons.map((icon, index) => {
-                    switch (icon) {
-                      case "1":
-                        return <BsEyeFill />;
-                      case "2":
-                        return <BiDrink />;
-                      case "3":
-                        return <FaCoffee />;
-                      case "4":
-                        return <GiKnifeFork />;
-                      case "5":
-                        return <TbSunset />;
-                      case "6":
-                        return <MdPhotoCamera />;
-                      case "7":
-                        return <MdMuseum />;
-                      default:
-                        return "";
-                    }
-                  })}
+        {route === "1" ? (
+          vilages.map((vilage, index) => {
+            // if (route !== vilage.group && route) {
+            //   return "";
+            // }
+            if (route !== "1") {
+              return "";
+            }
+            if (vilage.group === "1") {
+              return (
+                <div
+                  key={index}
+                  className="--card --flex-col"
+                  style={{ order: `${vilage.order}` }}
+                >
+                  <div
+                    className="title-container --flex-row"
+                    style={{
+                      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.07), rgba(0, 0, 0, 0.5)),url(${vilage.img})`,
+                    }}
+                  >
+                    <div className="icon-container --flex-col">
+                      {vilage.icons.map((icon, index) => {
+                        switch (icon) {
+                          case "1":
+                            return <BsEyeFill />;
+                          case "2":
+                            return <BiDrink />;
+                          case "3":
+                            return <FaCoffee />;
+                          case "4":
+                            return <GiKnifeFork />;
+                          case "5":
+                            return <TbSunset />;
+                          case "6":
+                            return <MdPhotoCamera />;
+                          case "7":
+                            return <MdMuseum />;
+                          default:
+                            return "";
+                        }
+                      })}
+                    </div>
+                    <p className="--title">{vilage.name}</p>
+                  </div>
+                  <div className="info-container">
+                    <p className="info-text">{vilage.description}</p>
+                  </div>
                 </div>
-                <p className="--title">{vilage.name}</p>
-              </div>
-              <div className="info-container">
-                <p className="info-text">{vilage.description}</p>
-              </div>
-            </div>
-          );
-        })}
+              );
+            }
+          })
+        ) : (
+          <div className="under-construction-container">
+            <p>We are working hard to get this next part ready.. 😎</p>
+          </div>
+        )}
       </div>
     </Wrapper>
   );
@@ -187,7 +198,21 @@ const Guide = () => {
 
 const Wrapper = styled.section`
   display: flex;
+  padding: 0 0 2rem 0;
   justify-content: center;
+  align-items: flex-start;
+  gap: 5rem;
+
+  .under-construction-container {
+    height: 100px;
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: 3rem;
+      color: #0a9695;
+    }
+  }
 
   .side-options {
     padding: 3rem 0 0 1rem;
@@ -263,8 +288,8 @@ const Wrapper = styled.section`
   .card-container {
     max-width: 1200px;
     display: flex;
-    justify-content: center;
-    padding: 3rem 0;
+    justify-content: flex-start;
+    padding: 3rem 0 0 0;
     gap: 2rem;
     flex-wrap: wrap;
   }
@@ -328,12 +353,20 @@ const Wrapper = styled.section`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 0;
 
+    .under-construction-container {
+      p {
+        font-size: 1.8rem;
+        color: #0a9695;
+      }
+    }
     .side-options {
       padding: 3rem 1rem;
     }
 
     .card-container {
+      max-width: auto;
       padding: 3rem 1rem;
     }
 
