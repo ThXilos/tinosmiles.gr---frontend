@@ -32,8 +32,11 @@ const Quick = () => {
 const Wrapper = styled.div`
   background-color: #0a9695;
   color: #fff;
+  display: flex;
+  justify-content: center;
 
   .container {
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,7 +47,7 @@ const Wrapper = styled.div`
 
   .--information {
     align-self: flex-start;
-    margin-left: 1rem;
+
     text-transform: uppercase;
     font-size: 1.4rem;
     margin-top: 1rem;
@@ -54,19 +57,21 @@ const Wrapper = styled.div`
   }
 
   .--primary {
-    font-size: 2.4rem;
+    padding-bottom: 1rem;
+    font-size: 2rem;
     max-width: 500px;
-    text-align: center;
     line-height: 1.2;
     letter-spacing: 1.2px;
+    align-self: flex-start;
   }
 
   .--subtitle {
+    padding-bottom: 1rem;
     font-size: 1.6rem;
     max-width: 500px;
     line-height: 1.8;
     letter-spacing: 1.2px;
-    text-align: center;
+    text-align: left;
   }
 
   .--btn-container {

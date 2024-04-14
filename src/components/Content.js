@@ -12,23 +12,21 @@ import {
   MdLocalGasStation,
 } from "../utils/icons";
 
-const gasStationInfo = [
-  {
-    company: "Elin",
-    hours: "",
-    location: "https://goo.gl/maps/SrWnQuZadarigcs49",
-  },
-  {
-    company: "Aegean",
-    hours: "",
-    location: "https://goo.gl/maps/fYSGpLyU8C17Y1Um9",
-  },
-  {
-    company: "Elin",
-    hours: "",
-    location: "https://goo.gl/maps/S8WXY8Joi6bmKDeR7",
-  },
-];
+import { gasStationInfo } from "../utils/stations";
+
+function getUpcomingSunday() {
+  const today = new Date(); // get the current date
+  const dayOfWeek = today.getDay(); // get the current day of the week (0 is Sunday, 1 is Monday, etc.)
+  let difference = 7 - dayOfWeek; // calculate how many days to add to reach the next Sunday
+  if (dayOfWeek === 0) {
+    // if today is already Sunday
+    difference = 0; // set difference to 0 to keep today's date
+  }
+  const upcomingSunday = new Date(today); // create a new Date object to avoid modifying the original date
+  upcomingSunday.setDate(today.getDate() + difference); // set the date to the upcoming Sunday
+
+  return upcomingSunday.toDateString(); // format the date as a readable string
+}
 
 const Content = () => {
   return (
@@ -113,18 +111,25 @@ const Content = () => {
           <div className="container --cta-box bg3 col-item-3">
             <p className="tertiary --bg-text">Open Gas Station:</p>
             <p className="tertiary --bg-text --information">
-              Sunday: 23/04/2023
+              {getUpcomingSunday()}
             </p>
             <MdLocalGasStation className="icon-gas" />
             <div className="station-list">
               {gasStationInfo.map((el, index) => {
+                if (el.active !== true) {
+                  return "";
+                }
                 return (
-                  <div key={index} className="station-list-item">
-                    <p className="--text">{el.company}</p>
-                    <a href={el.location} target="_blank" rel="noreferrer">
-                      {" "}
-                      <HiLocationMarker className="station-location-ico" />
-                    </a>
+                  <div key={index}>
+                    <div className="station-list-item">
+                      <p className="--text">{el.company}</p>
+                      <a href={el.location} target="_blank" rel="noreferrer">
+                        {" "}
+                        <HiLocationMarker className="station-location-ico" />
+                      </a>
+                    </div>
+
+                    <p>{el.locationName}</p>
                   </div>
                 );
               })}
@@ -141,9 +146,11 @@ const Wrapper = styled.section`
   margin: 0 auto;
 
   .col-container {
-    padding: 5rem 0;
+    padding: 5rem 2rem;
     display: flex;
     justify-content: space-between;
+    flex-wrap:wrap;
+    gap:2rem;
   }
 
   .col {
