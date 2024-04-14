@@ -122,10 +122,15 @@ const Content = () => {
                 return (
                   <div key={index}>
                     <div className="station-list-item">
-                      <p className="--text">{el.company}</p>
-                      <a href={el.location} target="_blank" rel="noreferrer">
+                      <a
+                        href={el.location}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="hyper-link-tag"
+                      >
                         {" "}
-                        <HiLocationMarker className="station-location-ico" />
+                        <p className="--text">{el.company}</p>
+                        <HiLocationMarker className="--icon" />
                       </a>
                     </div>
 
@@ -357,9 +362,14 @@ const Wrapper = styled.section`
       align-items:center;
     }
 
-    .station-location-ico{
-      font-size:2rem;
+    .hyper-link-tag{
+      text-decoration:none;
+      display:flex;
       color:#fff;
+    }
+
+    .--icon{
+      font-size:2rem;
     }
 
     .--text{
