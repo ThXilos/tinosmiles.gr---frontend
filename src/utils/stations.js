@@ -15,16 +15,17 @@ export const gasStationInfo = [
   },
   {
     company: "Elin",
+    locationName: "Town",
     hours: "",
-    location: "https://goo.gl/maps/S8WXY8Joi6bmKDeR7",
-    active: false,
+    location: "https://goo.gl/maps/6tCL6Z2YTs2o8nfH7",
+    active: true,
   },
   {
     company: "Shell",
     locationName: "Tripotamos",
     hours: "",
     location: "https://goo.gl/maps/Z5tDMFFJBwiFsW3h8",
-    active: true,
+    active: false,
   },
   {
     company: "Shell",
