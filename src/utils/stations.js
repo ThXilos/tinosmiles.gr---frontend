@@ -35,7 +35,8 @@ export const gasStationInfo = [
   },
   {
     company: "BP",
-    hours: "Town",
+    locationName: "Town",
+    hours: "",
     location: "https://goo.gl/maps/XjmdoVWpgS3Y6xEa7",
     active: true,
   },
