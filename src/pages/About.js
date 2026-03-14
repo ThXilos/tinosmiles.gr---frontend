@@ -6,7 +6,7 @@ import { useGlobalContext } from "../context/AppContext";
 const About = () => {
   const { setToggleWarning } = useGlobalContext();
   useEffect(() => {
-    setToggleWarning();
+    setToggleWarning(true);
   }, [setToggleWarning]);
   return (
     <Wrapper>

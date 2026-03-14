@@ -293,7 +293,7 @@ const Wrapper = styled.section`
     font-size: 2rem;
     letter-spacing: 1.2px;
     line-height:1.4;
-    padding: 0 0 2rem; 0
+    padding: 0 0 2rem;
   }
 
   .payment-icons {

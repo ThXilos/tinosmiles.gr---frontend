@@ -46,7 +46,7 @@ const MobileContactForm = () => {
   };
 
   const handleHoneypot = (e) => {
-    setHoneypot(e.traget.value);
+    setHoneypot(e.target.value);
   };
 
   const handleSubmit = async (e) => {
@@ -65,7 +65,7 @@ const MobileContactForm = () => {
       return;
     }
     try {
-      const res = await axios.post(process.env.REACT_APP_MAIL_ROUTE, payload);
+      await axios.post(process.env.REACT_APP_MAIL_ROUTE, payload);
       setMessageSuccess(true);
       setLoading(false);
       setPayload(initState);
@@ -74,9 +74,7 @@ const MobileContactForm = () => {
         setMessageSuccess(false);
       }, 3000);
 
-      console.log(res.data.message);
     } catch (err) {
-      console.log(err.message);
       setLoading(false);
       setTimeout(() => {
         setLoading(false);
@@ -85,12 +83,12 @@ const MobileContactForm = () => {
   };
 
   useEffect(() => {
-    setToggleWarning();
+    setToggleWarning(true);
   }, [setToggleWarning]);
 
   return (
     <Wrapper>
-      <form onSubmit={handleSubmit} class="container inner --center">
+      <form onSubmit={handleSubmit} className="container inner --center">
         <div className="container --left --col" style={{ gap: "1rem" }}>
           <h1 className="title">
             Feel free
@@ -105,12 +103,12 @@ const MobileContactForm = () => {
           value={honeypot}
           onChange={handleHoneypot}
         />
-        <div class="container --col">
-          <p class="head">name</p>
-          <div class="container --col">
-            <p class="sub">tell us your name</p>
+        <div className="container --col">
+          <p className="head">name</p>
+          <div className="container --col">
+            <p className="sub">tell us your name</p>
             <input
-              class="input --custom"
+              className="input --custom"
               id="name"
               type="text"
               name="name"
@@ -120,12 +118,12 @@ const MobileContactForm = () => {
             />
           </div>
         </div>
-        <div class="container --col">
-          <p class="head">email</p>
-          <div class="container --col">
-            <p class="sub">enter a contact email</p>
+        <div className="container --col">
+          <p className="head">email</p>
+          <div className="container --col">
+            <p className="sub">enter a contact email</p>
             <input
-              class="input --custom"
+              className="input --custom"
               id="email"
               name="email"
               value={payload.email}
@@ -134,12 +132,12 @@ const MobileContactForm = () => {
             />
           </div>
         </div>
-        <div class="container --col">
-          <p class="head">Pick-up location:</p>
-          <div class="container --col">
-            <p class="sub">the location you would like to pick up your car</p>
+        <div className="container --col">
+          <p className="head">Pick-up location:</p>
+          <div className="container --col">
+            <p className="sub">the location you would like to pick up your car</p>
             <select
-              class="input select --custom"
+              className="input select --custom"
               id="pickupLocation"
               name="pickupLocation"
               value={payload.pickupLocation}
@@ -154,13 +152,13 @@ const MobileContactForm = () => {
             </select>
           </div>
         </div>
-        <div class="container --col">
-          <p class="head">Select your dates</p>
-          <div class="container --row">
-            <div class="container --col">
-              <p class="sub">Pick up date</p>
+        <div className="container --col">
+          <p className="head">Select your dates</p>
+          <div className="container --row">
+            <div className="container --col">
+              <p className="sub">Pick up date</p>
               <input
-                class="input --1 select --custom"
+                className="input --1 select --custom"
                 id="pickupDate"
                 type="date"
                 name="pickupDate"
@@ -170,10 +168,10 @@ const MobileContactForm = () => {
                 onChange={handleChange}
               />
             </div>
-            <div class="container --col --center">
-              <p class="sub">Pick up Time</p>
+            <div className="container --col --center">
+              <p className="sub">Pick up Time</p>
               <select
-                class="input --2 select --custom"
+                className="input --2 select --custom"
                 id="pickupTime"
                 name="pickupTime"
                 value={payload.pickupTime}
@@ -188,28 +186,28 @@ const MobileContactForm = () => {
             </div>
           </div>
         </div>
-        <div class="container --col">
-          <div class="container --row">
-            <div class="container --col">
-              <p class="sub">drop off date</p>
+        <div className="container --col">
+          <div className="container --row">
+            <div className="container --col">
+              <p className="sub">drop off date</p>
               <input
-                class="input --1 select --custom"
+                className="input --1 select --custom"
                 id="returnDate"
                 type="date"
                 name="returnDate"
                 min={
                   payload.pickupDate
                     ? payload.pickupDate
-                    : format(new Date(), `yyy-MM-dd`)
+                    : format(new Date(), `yyyy-MM-dd`)
                 }
                 value={payload.returnDate}
                 onChange={handleChange}
               />
             </div>
-            <div class="container --col --center">
-              <p class="sub">drop off Time</p>
+            <div className="container --col --center">
+              <p className="sub">drop off Time</p>
               <select
-                class="input --2 select --custom"
+                className="input --2 select --custom"
                 id="returnTime"
                 name="returnTime"
                 value={payload.returnTime}

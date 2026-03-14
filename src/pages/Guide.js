@@ -17,7 +17,7 @@ const Guide = () => {
   const { setToggleWarning } = useGlobalContext();
   const [route, setRoute] = useState("1");
   useEffect(() => {
-    setToggleWarning();
+    setToggleWarning(true);
   }, [setToggleWarning]);
   return (
     <Wrapper>

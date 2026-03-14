@@ -6,7 +6,7 @@ const Privacy = () => {
   const { setToggleWarning } = useGlobalContext();
   useEffect(() => {
     window.scrollTo(0, 0);
-    setToggleWarning();
+    setToggleWarning(true);
   }, [setToggleWarning]);
   return (
     <Wrapper>

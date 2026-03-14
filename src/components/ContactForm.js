@@ -60,7 +60,7 @@ const ContactForm = () => {
       return;
     }
     try {
-      const res = await axios.post(process.env.REACT_APP_MAIL_ROUTE, payload);
+      await axios.post(process.env.REACT_APP_MAIL_ROUTE, payload);
       setMessageSuccess(true);
       setLoading(false);
       setPayload(initState);
@@ -69,9 +69,7 @@ const ContactForm = () => {
         setMessageSuccess(false);
       }, 6000);
 
-      console.log(res.data.message);
     } catch (err) {
-      console.log(err.message);
       setLoading(false);
       setTimeout(() => {
         setLoading(false);

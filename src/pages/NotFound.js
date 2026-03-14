@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const NotFound = () => {
   const { setToggleWarning } = useGlobalContext();
   useEffect(() => {
-    setToggleWarning();
+    setToggleWarning(true);
   }, [setToggleWarning]);
   return (
     <Wrapper>

@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 const Cookie = () => {
   const checkCookieStatus = () => {
     const cookieArr = document.cookie.split(";");
-    console.log(cookieArr);
     return (
       cookieArr.includes(" acceptedCookies=true") ||
       cookieArr.includes("acceptCookies=true")

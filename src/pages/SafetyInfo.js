@@ -6,7 +6,7 @@ const SafetyInfo = () => {
   const { setToggleWarning } = useGlobalContext();
 
   useEffect(() => {
-    setToggleWarning();
+    setToggleWarning(true);
   }, [setToggleWarning]);
   return (
     <Wrapper>

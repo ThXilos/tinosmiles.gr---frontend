@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const Responce = () => {
@@ -78,7 +77,7 @@ const Responce = () => {
           className="--info-image"
         />
       </div>
-      <div className=".--info-container">
+      <div className="--info-container">
         <p className="--footer-text">
           Tinos Miles | Car Rental Services | Ag.markos, Tinos 84200 GNTO Reg.
           <br />
