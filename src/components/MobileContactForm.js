@@ -66,7 +66,8 @@ const MobileContactForm = () => {
       }, 3000);
       return;
     }
-    const recaptchaToken = recaptchaRef.current.getValue();
+    const recaptchaToken = await recaptchaRef.current.executeAsync();
+    recaptchaRef.current.reset();
     if (!recaptchaToken) {
       setLoading(false);
       setMessageWarning(true);
@@ -75,7 +76,6 @@ const MobileContactForm = () => {
     }
     try {
       await axios.post(process.env.REACT_APP_MAIL_ROUTE, { ...payload, recaptchaToken });
-      recaptchaRef.current.reset();
       setMessageSuccess(true);
       setLoading(false);
       setPayload(initState);
@@ -235,6 +235,7 @@ const MobileContactForm = () => {
         <ReCAPTCHA
           ref={recaptchaRef}
           sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+          size="invisible"
         />
         <div className="terms-accept-container">
           <div

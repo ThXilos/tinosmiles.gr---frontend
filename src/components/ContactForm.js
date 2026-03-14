@@ -61,7 +61,8 @@ const ContactForm = () => {
       }, 3000);
       return;
     }
-    const recaptchaToken = recaptchaRef.current.getValue();
+    const recaptchaToken = await recaptchaRef.current.executeAsync();
+    recaptchaRef.current.reset();
     if (!recaptchaToken) {
       setLoading(false);
       setMessageWarning(true);
@@ -70,7 +71,6 @@ const ContactForm = () => {
     }
     try {
       await axios.post(process.env.REACT_APP_MAIL_ROUTE, { ...payload, recaptchaToken });
-      recaptchaRef.current.reset();
       setMessageSuccess(true);
       setLoading(false);
       setPayload(initState);
@@ -209,7 +209,7 @@ const ContactForm = () => {
       <ReCAPTCHA
         ref={recaptchaRef}
         sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-        className="recaptcha"
+        size="invisible"
       />
       <div className="terms-accept-container">
         <div
