@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { format } from "date-fns";
 import styled from "styled-components";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 import { useGlobalContext } from "../context/AppContext";
 import Spinner from "./Spinner";
 
@@ -18,6 +19,7 @@ const ContactForm = () => {
   };
 
   const [honeypot, setHoneypot] = useState("");
+  const recaptchaRef = useRef(null);
 
   const { loading, setLoading, setMessageSuccess, setMessageWarning } =
     useGlobalContext();
@@ -59,8 +61,16 @@ const ContactForm = () => {
       }, 3000);
       return;
     }
+    const recaptchaToken = recaptchaRef.current.getValue();
+    if (!recaptchaToken) {
+      setLoading(false);
+      setMessageWarning(true);
+      setTimeout(() => setMessageWarning(false), 3000);
+      return;
+    }
     try {
-      await axios.post(process.env.REACT_APP_MAIL_ROUTE, payload);
+      await axios.post(process.env.REACT_APP_MAIL_ROUTE, { ...payload, recaptchaToken });
+      recaptchaRef.current.reset();
       setMessageSuccess(true);
       setLoading(false);
       setPayload(initState);
@@ -196,6 +206,11 @@ const ContactForm = () => {
           </button>
         </div>
       </form>
+      <ReCAPTCHA
+        ref={recaptchaRef}
+        sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+        className="recaptcha"
+      />
       <div className="terms-accept-container">
         <div
           className={
