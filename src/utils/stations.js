@@ -4,7 +4,7 @@ export const gasStationInfo = [
     locationName: "Isternia",
     hours: "",
     location: "https://goo.gl/maps/g9nkrKn2TDXDzjZw5",
-    active: false,
+    active: true,
   },
   {
     company: "Aegean",
@@ -25,7 +25,7 @@ export const gasStationInfo = [
     locationName: "Town",
     hours: "",
     location: "https://goo.gl/maps/Z5tDMFFJBwiFsW3h8",
-    active: true,
+    active: false,
   },
   {
     company: "Shell",
