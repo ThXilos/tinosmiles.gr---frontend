@@ -153,78 +153,82 @@ const Wrapper = styled.section`
   .col-container {
     padding: 5rem 2rem;
     display: flex;
-    justify-content: space-between;
-    flex-wrap:wrap;
-    gap:2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
   }
 
   .col {
-    color:#fff;
-    width: 300px;
-    height: 540px;
+    color: #fff;
+    flex: 1 1 260px;
+    max-width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  .col-1{}
-  .col-2, .col-3{
-    border-radius:9px;
-    overflow:hidden;
+  .col-1 {
+    gap: 2rem;
+  }
+
+  .col-2, .col-3 {
+    border-radius: 9px;
+    overflow: hidden;
     box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
   }
-  .col-4{
 
-  } 
-  
-  .col-5{
-    display:none;
-  }
-
-  .--cta-box{
-    height:48%;
-    background-size:cover;
-    background-position:center;
-    justify-content: center;
-  }
-
-  .bg1{
-    background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-front-door_wyfr0h.webp);
-  }
-
-  .bg2{
-    background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-explore-image_ukkkvn.webp);
-  }
-
-  .bg3{
-    background-color:#0a9695;
-  }
-
-  .--bg-text{
-    background:rgba(106,193,183, 0.7);
-    padding:0 1rem;
-  }
-
-  .col-2{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)),url(https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-about-image_wdx7zl.webp);
-    background-size:cover;
+  .col-2 {
+    min-height: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.6)), url(https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-about-image_wdx7zl.webp);
+    background-size: cover;
     background-position: right;
   }
 
-  .col-3{
-    color:#555;
-
+  .col-3 {
+    color: #555;
   }
 
-  .car-image{
-    width:100%;
-}
+  .col-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .--cta-box {
+    flex: 1;
+    min-height: 220px;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+  }
+
+  .bg1 {
+    background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-front-door_wyfr0h.webp);
+  }
+
+  .bg2 {
+    background-image: url(https://res.cloudinary.com/dtekdjcan/image/upload/v1678443852/tinosmiles.gr/tinos-miles-explore-image_ukkkvn.webp);
+  }
+
+  .bg3 {
+    background-color: #0a9695;
+  }
+
+  .--bg-text {
+    background: rgba(106, 193, 183, 0.7);
+    padding: 0 1rem;
+  }
+
+  .car-image {
+    width: 100%;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
     background-color: #0a9695;
     color: #fff;
-    border-radius:9px;
+    border-radius: 9px;
     box-shadow: rgba(149, 157, 165, 0.7) 0px 8px 24px;
   }
 
@@ -235,28 +239,28 @@ const Wrapper = styled.section`
     text-transform: capitalize;
   }
 
-  .info-container{
-    display:flex;
-    flex-direction:column;
-    gap:1rem;
-    padding:2rem;
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
   }
 
-  .car-info-container{
-    padding:1rem;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    row-gap:1rem;
-    column-gap:0.5rem;
+  .car-info-container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+    column-gap: 0.5rem;
   }
 
-  .info-item{
-    background-color:#6ac1b7;
-    color:#fff;
-    padding:1rem;
-    font-size:1.2rem;
-    border-radius:9px;
-    text-align:center;
+  .info-item {
+    background-color: #6ac1b7;
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 9px;
+    text-align: center;
   }
 
   .contact-info {
@@ -264,24 +268,24 @@ const Wrapper = styled.section`
     padding: 1rem;
   }
 
-  .contact-info-list{
-    display:flex;
-    flex-direction:column;
-    gap:1rem;
-    padding:0 0 1rem;
+  .contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 0 1rem;
   }
 
-  .contact-icon{
-    font-size:2.4rem;
+  .contact-icon {
+    font-size: 2.4rem;
   }
 
-  .list-item{
-    display:flex;
-    align-items:center;
-    gap:1rem;
-    background-color:#79c7be;
-    padding:1rem 1rem;
-    font-size:1.6rem;
+  .list-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #79c7be;
+    padding: 1rem;
+    font-size: 1.6rem;
   }
 
   .payment-info {
@@ -292,19 +296,20 @@ const Wrapper = styled.section`
   .card-text {
     font-size: 2rem;
     letter-spacing: 1.2px;
-    line-height:1.4;
+    line-height: 1.4;
     padding: 0 0 2rem;
   }
 
   .payment-icons {
-    justify-content: space-between;
     display: flex;
+    justify-content: space-between;
     gap: 1rem;
   }
 
   .payment-icon {
     font-size: 3.6rem;
   }
+
   .col__cta {
     text-transform: uppercase;
     font-size: 2rem;
@@ -319,102 +324,115 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 1rem 1rem;
+    padding: 1rem;
   }
 
-  .--information{
-    align-self:flex-end;
-    text-transform:uppercase;
-    font-size:1.2rem;
-    margin-top:1rem;
-    background-color:#ffc107;
-    
-    color:#666;
+  .--information {
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    background-color: #ffc107;
+    color: #666;
   }
 
-  .col-item-3{
-    display:none;
+  .col-item-3 {
+    display: none;
   }
 
-  @media(max-width:1200px){
-   .col-container{
-       flex-wrap:wrap;
-   }
-
-   .col-2{
-    display:none;
-   }
+  .station-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem 1rem;
   }
 
-  @media (max-width: 768px) {
+  .station-list-item {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+  }
 
-    .station-list{
-    display:flex;
-    flex-direction: row;
-    justify-content:center;
-    gap:2rem;
+  .hyper-link-tag {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+  }
+
+  .--icon {
+    font-size: 2rem;
+  }
+
+  .--text {
+    font-size: 1.8rem;
+  }
+
+  .icon-gas {
+    display: none;
+  }
+
+  /* Tablet: 2-column layout */
+  @media (max-width: 1100px) {
+    .col {
+      flex: 1 1 45%;
+      max-width: 48%;
     }
 
-    .station-list-item{
-      display:flex;
-      gap:0.3rem;
-      justify-content:center;
-      align-items:center;
+    .col-2 {
+      min-height: 300px;
     }
+  }
 
-    .hyper-link-tag{
-      text-decoration:none;
-      display:flex;
-      color:#fff;
-    }
-
-    .--icon{
-      font-size:2rem;
-    }
-
-    .--text{
-      font-size:1.8rem;
-    }
-
-    .col-container{
-      flex-direction:column;
-      gap:2rem;
-      padding:2rem 1rem;
-    }
-    
-    .contact-info{
-      display:none;
+  /* Mobile: single column */
+  @media (max-width: 600px) {
+    .col-container {
+      flex-direction: column;
+      padding: 2rem 1rem;
     }
 
     .col {
-      width:auto;
+      flex: none;
+      width: 100%;
+      max-width: 100%;
     }
 
-    .col-1{
-      height:auto;
+    .contact-info {
+      display: none;
     }
 
-    .col-4{
-      height:80rem;
-      gap:2rem;
+    .col-2 {
+      min-height: 250px;
     }
 
-    .col-item-1{
-        order:3;
+    .col-4 {
+      gap: 1rem;
     }
 
-    .col-item-2{
-      order:1;
+    .col-item-1 {
+      order: 3;
     }
 
-    .col-item-3{
-      order:2;
-      display:flex;
+    .col-item-2 {
+      order: 1;
     }
-    
-    .icon-gas{
-      align-self:center;
-      font-size:10rem;
+
+    .col-item-3 {
+      order: 2;
+      display: flex;
+    }
+
+    .icon-gas {
+      display: block;
+      align-self: center;
+      font-size: 10rem;
+    }
+
+    .station-list {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
     }
   }
 `;

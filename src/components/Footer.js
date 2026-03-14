@@ -33,7 +33,7 @@ const Footer = () => {
           <ul className="--ul">
             <li className="--list-item">
               <BsTelephone className="--item-icon" />
-              +30 6944187668
+              +30 6937696704
             </li>
             <li className="--list-item">
               <HiOutlineMail className="--item-icon" />
@@ -60,7 +60,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="container --cp">
-        <p className="cp-text">tinos miles &#169; 2024</p>
+        <p className="cp-text">tinos miles &#169; 2026</p>
         <div className="container --sis">
           <a
             href="https://www.instagram.com/tinosmiles/"
